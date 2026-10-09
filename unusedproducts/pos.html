@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>POS System | Inspenox</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+            <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark transparent fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img src="../assets/images/Recovered.png" alt="Inspenox Logo" class="me-2"
+                    style="height: 80px; width: auto;" />
+            </a>
+
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navMenu">
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                    <li class="nav-item d-lg-none mt-2">
+                        <button class="theme-toggle-button w-auto mx-3" onclick="toggleTheme()"
+                            id="themeToggleBtnMobile">
+                            <i class="bi" id="themeToggleIconMobile"></i>
+                        </button>
+                    </li>
+                </ul>
+                <div class="d-none d-lg-flex align-items-center gap-2 ms-3">
+                    <button class="theme-toggle-button" onclick="toggleTheme()" id="themeToggleBtnDesktop">
+                        <i class="bi" id="themeToggleIconDesktop"></i>
+                    </button>
+                    <a href="../index.html#contact" class="btn btn-gradient btn-sm">Get Demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero py-5 mt-5" data-aos="fade-up">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold">Point of Sale (POS) System</h1>
+            <p class="lead">Smart billing with real-time inventory and multi-outlet sync for retail & pharma.</p>
+            <a href="../index.html#contact" class="btn btn-theme mt-3">Request a Demo</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-5 bg-body-secondary">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Key <span class="text-success">Features</span></h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card h-100 p-4">
+                        <i class="bi bi-cart-fill fs-1 text-success mb-3"></i>
+                        <h5>Fast Billing</h5>
+                        <p class="text-muted">Speedy checkout for retail, grocery, and pharmacy counters.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card h-100 p-4">
+                        <i class="bi bi-layers-half fs-1 text-info mb-3"></i>
+                        <h5>Inventory Sync</h5>
+                        <p class="text-muted">Real-time stock tracking across stores and warehouses.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card h-100 p-4">
+                        <i class="bi bi-person-check-fill fs-1 text-warning mb-3"></i>
+                        <h5>User Roles</h5>
+                        <p class="text-muted">Role-based cashier, admin & manager dashboards.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 text-center mt-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card h-100 p-4">
+                        <i class="bi bi-cloud-arrow-up-fill fs-1 text-primary mb-3"></i>
+                        <h5>Cloud Backup</h5>
+                        <p class="text-muted">Secure cloud-based data backup and sync.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card h-100 p-4">
+                        <i class="bi bi-receipt-cutoff fs-1 text-danger mb-3"></i>
+                        <h5>Digital Receipts</h5>
+                        <p class="text-muted">Print and email bills instantly with custom branding.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Target Industries -->
+    <section class="py-5">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4">Perfect for <span class="text-success">Retail</span> & More</h2>
+            <p class="text-muted mb-5">Scalable POS built for fast-paced, high-volume businesses.</p>
+
+            <div class="row g-4 justify-content-center">
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="industry-card card h-100 p-4 rounded-4 text-center shadow-sm border-0" data-aos="fade-up">
+                        <div class="d-flex justify-content-center mb-3">
+                            <div class="icon-wrapper text-success bg-success-subtle rounded-circle">
+                                <i class="bi bi-basket-fill fs-3"></i>
+                            </div>
+                        </div>
+                        <h6 class="fw-semibold mb-2">Supermarkets</h6>
+                        <p class="small text-muted">Quick scanning, barcode support, bulk inventory features.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="industry-card card h-100 p-4 rounded-4 text-center shadow-sm border-0" data-aos="fade-up" data-aos-delay="100">
+                        <div class="d-flex justify-content-center mb-3">
+                            <div class="icon-wrapper text-danger bg-danger-subtle rounded-circle">
+                                <i class="bi bi-capsule-pill fs-3"></i>
+                            </div>
+                        </div>
+                        <h6 class="fw-semibold mb-2">Pharmacies</h6>
+                        <p class="small text-muted">Batch expiry, doctor info, GST billing for medicines.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="industry-card card h-100 p-4 rounded-4 text-center shadow-sm border-0" data-aos="fade-up" data-aos-delay="200">
+                        <div class="d-flex justify-content-center mb-3">
+                            <div class="icon-wrapper text-warning bg-warning-subtle rounded-circle">
+                                <i class="bi bi-shop-window fs-3"></i>
+                            </div>
+                        </div>
+                        <h6 class="fw-semibold mb-2">Grocery</h6>
+                        <p class="small text-muted">Weighing scale, combo offers & counter-wise sync.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="industry-card card h-100 p-4 rounded-4 text-center shadow-sm border-0" data-aos="fade-up" data-aos-delay="300">
+                        <div class="d-flex justify-content-center mb-3">
+                            <div class="icon-wrapper text-info bg-info-subtle rounded-circle">
+                                <i class="bi bi-cup-straw fs-3"></i>
+                            </div>
+                        </div>
+                        <h6 class="fw-semibold mb-2">Cafes</h6>
+                        <p class="small text-muted">Touch billing, kitchen orders, menu modifiers & more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section id="contact" class="py-5 bg-body-tertiary text-center">
+        <div class="container">
+            <h3 class="fw-bold mb-4">Looking to Modernize Billing?</h3>
+            <p class="mb-4 text-muted">Request a live demo and upgrade your POS experience today.</p>
+            <a href="../index.html#contact" class="btn btn-theme">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="siteFooter" class="text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-1 mb-0">&copy; 2025 Inspenox Inc.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+
+</html>

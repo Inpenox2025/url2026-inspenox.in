@@ -1,0 +1,26 @@
+[build]
+  functions = "netlify/functions"
+
+
+
+# Redirect .html → clean URL
+[[redirects]]
+from = "/*.html"
+to = "/:splat"
+status = 301
+force = true
+
+
+# Serve HTML file for clean URL
+[[redirects]]
+from = "/*"
+to = "/:splat.html"
+status = 200
+
+
+# Homepage cleanup
+[[redirects]]
+from = "/index"
+to = "/"
+status = 301
+force = true

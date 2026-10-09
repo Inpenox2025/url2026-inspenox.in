@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | Inspenox</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Segoe UI";
+            transition: .4s;
+        }
+
+        html[data-bs-theme="dark"] body {
+            background: linear-gradient(to bottom right, #020810, #081428);
+            color: #fff;
+        }
+
+        html[data-bs-theme="light"] body {
+            background: linear-gradient(135deg, #fff, #e6f0ff);
+            color: #111;
+        }
+
+        .card-ui {
+            border-radius: 16px;
+            padding: 18px;
+            backdrop-filter: blur(12px);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        [data-bs-theme="light"] .card-ui {
+            background: #fff;
+        }
+
+        .table thead {
+            background: linear-gradient(90deg, #ff7e5f, #ff3c00);
+            color: white;
+        }
+
+        .theme-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-theme {
+            background: linear-gradient(90deg, #ff7e5f, #ff3c00);
+            border: none;
+            color: #fff;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width:768px) {
+
+            .navbar h5 {
+                font-size: 16px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .card-ui {
+                padding: 12px;
+            }
+
+            .row>div {
+                width: 100% !important;
+            }
+
+            .table {
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .btn-sm {
+                margin-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top">
+        <div class="container d-flex justify-content-between">
+
+            <h5>Inspenox Admin</h5>
+
+            <div class="d-flex gap-2">
+                <button class="theme-btn" onclick="toggleTheme()">
+                    <i class="bi" id="themeIcon"></i>
+                </button>
+                <button class="btn btn-danger btn-sm" onclick="logout()">Logout</button>
+            </div>
+
+        </div>
+    </nav>
+
+    <div class="container" style="margin-top:100px">
+
+        <!-- TABS -->
+        <ul class="nav nav-tabs mb-3" id="tabs">
+            <li class="nav-item"><button class="nav-link active" data-tab="dashboard">Dashboard</button></li>
+            <li class="nav-item"><button class="nav-link" data-tab="orders">Orders</button></li>
+            <li class="nav-item"><button class="nav-link" data-tab="influencers">Influencers</button></li>
+            <li class="nav-item"><button class="nav-link" data-tab="coupons">Coupons</button></li>
+        </ul>
+
+        <!-- DASHBOARD -->
+        <div class="tab-content" id="dashboard">
+            <div class="row g-4">
+
+                <div class="col-md-3">
+                    <div class="card-ui text-center">
+                        <h6>Total Orders</h6>
+                        <h2 id="ordersCount">0</h2>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card-ui text-center">
+                        <h6>Total Commission</h6>
+                        <h2 id="totalCommission">₹0</h2>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card-ui text-center">
+                        <h6>Paid</h6>
+                        <h2 id="paidAmount">₹0</h2>
+                    </div>
+                </div>
+
+                <div class="col-md-3">
+                    <div class="card-ui text-center">
+                        <h6>Pending</h6>
+                        <h2 id="pendingAmount">₹0</h2>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ORDERS -->
+        <div class="tab-content d-none" id="orders">
+            <div class="card-ui mt-3">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Order</th>
+                            <th>User</th>
+                            <th>Plan</th>
+                            <th>Commission</th>
+                            <!-- <th>Status</th> -->
+                        </tr>
+                    </thead>
+                    <tbody id="ordersTable"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- INFLUENCERS -->
+        <div class="tab-content d-none" id="influencers">
+            <div class="card-ui mt-3">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>UPI</th>
+                            <th>Total</th>
+                            <th>Paid</th>
+                            <th>Pending</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="infTable"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- COUPONS -->
+        <div class="tab-content d-none" id="coupons">
+
+            <button class="btn btn-theme mb-3" onclick="openCouponModal()">+ Add Coupon</button>
+
+            <div class="card-ui">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th>Code</th>
+                            <th>User</th>
+                            <th>Discount</th>
+                            <th>Commission</th>
+                            <th>Used</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="couponTable"></tbody>
+                </table>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- MODAL -->
+    <div class="modal fade" id="couponModal">
+        <div class="modal-dialog">
+            <div class="modal-content p-3">
+
+                <h5>Add Coupon</h5>
+
+                <input id="code" class="form-control mb-2" placeholder="Code">
+                <input id="discount" class="form-control mb-2" placeholder="Discount %">
+                <input id="commission" class="form-control mb-2" placeholder="Commission %">
+                <select id="userId" class="form-control mb-2"></select>
+
+                <button class="btn btn-success" onclick="createCoupon()">Save</button>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // SESSION
+        if (!sessionStorage.getItem("admin")) location = "admin-login.html";
+
+        // TAB 
+        document.querySelectorAll("#tabs button").forEach(btn => {
+            btn.onclick = () => {
+
+                // Save selected tab
+                localStorage.setItem("activeTab", btn.dataset.tab);
+
+                // Switch UI
+                document.querySelectorAll(".nav-link").forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+
+                document.querySelectorAll(".tab-content").forEach(t => t.classList.add("d-none"));
+                document.getElementById(btn.dataset.tab).classList.remove("d-none");
+            };
+        });
+        (function () {
+            const savedTab = localStorage.getItem("activeTab");
+
+            if (savedTab) {
+                document.querySelectorAll(".nav-link").forEach(b => b.classList.remove("active"));
+                document.querySelectorAll(".tab-content").forEach(t => t.classList.add("d-none"));
+
+                const btn = document.querySelector(`[data-tab="${savedTab}"]`);
+                const tab = document.getElementById(savedTab);
+
+                if (btn && tab) {
+                    btn.classList.add("active");
+                    tab.classList.remove("d-none");
+                }
+            }
+        })();
+
+        // THEME
+        function toggleTheme() {
+            let t = document.documentElement.getAttribute("data-bs-theme") === "dark" ? "light" : "dark";
+            document.documentElement.setAttribute("data-bs-theme", t);
+            localStorage.setItem("theme", t);
+            updateIcon();
+        }
+        function updateIcon() {
+            document.getElementById("themeIcon").className =
+                document.documentElement.getAttribute("data-bs-theme") === "dark" ? "bi bi-sun" : "bi bi-moon";
+        }
+        (function () {
+            let t = localStorage.getItem("theme") || "dark";
+            document.documentElement.setAttribute("data-bs-theme", t);
+            updateIcon();
+        })();
+
+        function formatCurrency(v) { return "₹" + Number(v || 0).toFixed(2); }
+
+        function editCoupon(id, codeVal, discountVal, commissionVal, userVal) {
+
+            // Fill modal
+            document.getElementById("code").value = codeVal;
+            document.getElementById("discount").value = discountVal;
+            document.getElementById("commission").value = commissionVal;
+            document.getElementById("userId").value = userVal;
+
+            // Change button behavior
+            const btn = document.querySelector("#couponModal button");
+            btn.innerText = "Update";
+
+            btn.onclick = function () {
+
+                fetch("/.netlify/functions/update-coupon", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        id,
+                        coupon_code: code.value,
+                        discount_percent: Number(discount.value),
+                        commission_percent: Number(commission.value),
+                        user_id: Number(userId.value)
+                    })
+                })
+                    .then(() => {
+                        alert("Updated ✅");
+                        location.reload();
+                    });
+
+            };
+
+            new bootstrap.Modal(document.getElementById("couponModal")).show();
+        }
+
+        function editCoupon(id, codeVal, discountVal, commissionVal, userVal) {
+
+            // Fill modal
+            document.getElementById("code").value = codeVal;
+            document.getElementById("discount").value = discountVal;
+            document.getElementById("commission").value = commissionVal;
+            document.getElementById("userId").value = userVal;
+
+            // Change button behavior
+            const btn = document.querySelector("#couponModal button");
+            btn.innerText = "Update";
+
+            btn.onclick = function () {
+
+                fetch("/.netlify/functions/update-coupon", {
+                    method: "POST",
+                    body: JSON.stringify({
+                        id,
+                        coupon_code: code.value,
+                        discount_percent: Number(discount.value),
+                        commission_percent: Number(commission.value),
+                        user_id: Number(userId.value)
+                    })
+                })
+                    .then(() => {
+                        alert("Updated ✅");
+                        location.reload();
+                    });
+
+            };
+
+            new bootstrap.Modal(document.getElementById("couponModal")).show();
+        }
+        Promise.all([
+            fetch("/.netlify/functions/get-orders").then(r => r.json()),
+            fetch("/.netlify/functions/get-influencers").then(r => r.json())
+        ]).then(([orders, users]) => {
+
+            // ✅ TOTAL COMMISSION (from orders)
+            let totalCommission = 0;
+            orders.forEach(o => {
+                totalCommission += Number(o.commission_amount || 0);
+            });
+
+            // ✅ TOTAL PAID (actual payout from users table)
+            let totalPaid = 0;
+            users.forEach(u => {
+                totalPaid += Number(u.paid_amount || 0);
+            });
+
+            // ✅ REMAINING (pending)
+            let totalPending = totalCommission - totalPaid;
+
+            // ✅ UPDATE UI
+            document.getElementById("totalCommission").innerText = formatCurrency(totalCommission);
+            document.getElementById("paidAmount").innerText = formatCurrency(totalPaid);
+            document.getElementById("pendingAmount").innerText = formatCurrency(totalPending);
+            document.getElementById("ordersCount").innerText = orders.length;
+        });
+
+        fetch("/.netlify/functions/get-influencers")
+            .then(r => r.json())
+            .then(data => {
+                let html = "<option value=''>Select Influencer</option>";
+
+                data.forEach(u => {
+                    html += `<option value="${u.id}">${u.name} (${u.email})</option>`;
+                });
+
+                document.getElementById("userId").innerHTML = html;
+            });
+
+        // ORDERS
+        fetch("/.netlify/functions/get-orders")
+            .then(r => r.json())
+            .then(data => {
+
+                let html = "";
+                let totalCommissionValue = 0;
+
+                data.forEach(o => {
+                    totalCommissionValue += Number(o.commission_amount || 0);
+
+                    html += `
+<tr>
+<td>${o.order_id}</td>
+<td>${o.users?.name || "-"}</td>
+<td>${o.plan_name}</td>
+<td>${formatCurrency(o.commission_amount)}</td>
+</tr>`;
+                });
+
+                ordersTable.innerHTML = html;
+
+                ordersCount.innerText = data.length;
+                totalCommission.innerText = formatCurrency(totalCommissionValue);
+            });
+
+        // INFLUENCERS
+        fetch("/.netlify/functions/get-influencers")
+            .then(r => r.json())
+            .then(data => {
+                let html = "";
+                data.forEach(u => {
+                    html += `
+<tr>
+<td>${u.name}</td>
+<td>${u.email}</td>
+<td>${u.upi_id || "-"}</td>
+<td>${formatCurrency(u.total_earnings)}</td>
+<td>${formatCurrency(u.paid_amount)}</td>
+<td>${formatCurrency(u.pending_balance)}</td>
+<td>
+<button class="btn btn-warning btn-sm" onclick="editUser(${u.id})">Edit</button>
+<button class="btn btn-success btn-sm" onclick="payInfluencer(${u.id},${u.pending_balance})">Mark As Paid</button>
+</td>
+</tr>`;
+                });
+                infTable.innerHTML = html;
+            });
+
+        function payInfluencer(id, amount) {
+            if (!amount || amount <= 0) return alert("No pending");
+            if (!confirm("Pay ₹" + amount + " ?")) return;
+
+            fetch("/.netlify/functions/pay-influencer", {
+                method: "POST",
+                body: JSON.stringify({ userId: id, amount })
+            }).then(() => location.reload());
+        }
+
+        function editUser(id) {
+            let name = prompt("Name:");
+            let upi = prompt("UPI:");
+            fetch("/.netlify/functions/update-influencer", {
+                method: "POST",
+                body: JSON.stringify({ id, name, upi_id: upi })
+            }).then(() => location.reload());
+        }
+
+        // COUPONS
+        fetch("/.netlify/functions/get-coupons")
+            .then(r => r.json())
+            .then(data => {
+                let html = "";
+                data.forEach(c => {
+                    html += `
+<tr>
+<td>${c.coupon_code}</td>
+<td>${c.users?.name || "-"}</td>
+<td>${c.discount_percent}%</td>
+<td>${c.commission_percent}%</td>
+<td>${c.used_count}</td>
+<td>
+<button class="btn btn-warning btn-sm" onclick="editCoupon(${c.id}, '${c.coupon_code}', ${c.discount_percent}, ${c.commission_percent}, ${c.user_id})">
+✏️
+</button>
+<button class="btn btn-danger btn-sm" onclick="deleteCoupon(${c.id})">
+❌
+</button>
+</td>
+</tr>`;
+                });
+                couponTable.innerHTML = html;
+            });
+
+        function openCouponModal() {
+
+            // reset fields
+            code.value = "";
+            discount.value = "";
+            commission.value = "";
+            userId.value = "";
+
+            const btn = document.querySelector("#couponModal button");
+            btn.innerText = "Save";
+            btn.onclick = createCoupon;
+
+            new bootstrap.Modal(document.getElementById("couponModal")).show();
+        }
+
+        function createCoupon() {
+
+            const payload = {
+                coupon_code: code.value.trim(),
+                discount_percent: Number(discount.value),
+                commission_percent: Number(commission.value),
+                user_id: Number(userId.value)
+            };
+
+            console.log("Sending:", payload); // DEBUG
+
+            if (!payload.coupon_code) {
+                alert("Coupon code required");
+                return;
+            }
+
+            if (!payload.user_id || isNaN(payload.user_id)) {
+                alert("Valid influencer ID required");
+                return;
+            }
+
+            fetch("/.netlify/functions/create-coupon", {
+                method: "POST",
+                body: JSON.stringify(payload)
+            })
+                .then(res => res.json())
+                .then(res => {
+                    console.log("Response:", res); // DEBUG
+
+                    if (res.error) {
+                        alert("Error: " + res.error);
+                    } else {
+                        alert("Coupon created ✅");
+                        location.reload();
+                    }
+                })
+                .catch(err => {
+                    console.error(err);
+                    alert("Something went wrong");
+                });
+        }
+        function logout() {
+            sessionStorage.clear();
+            location = "admin-login.html";
+        }
+
+        window.onpageshow = function (event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

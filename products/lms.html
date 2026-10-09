@@ -1,0 +1,948 @@
+<!doctype html>
+<!-- lproducts/lms.html -->
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Injara LMS - AI Powered Learning Management System | Inspenox</title>
+  <meta name="description"
+    content="Injara LMS by Inspenox is an intelligent learning management system for colleges with coding practice, placement preparation, and assessments.">
+  <link rel="canonical" href="https://inspenox.in/products/lms/" />
+  <meta property="og:title" content="Injara LMS - AI Powered Learning Management System">
+  <meta property="og:description"
+    content="Injara LMS is a next-generation AI-powered learning management system for colleges and training institutes.">
+  <meta property="og:url" content="https://inspenox.in/products/lms/">
+  <meta property="og:type" content="website">
+  <script type="application/ld+json">
+       {
+         "@context": "https://schema.org",
+         "@type": "SoftwareApplication",
+         "name": "INJARA LMS",
+         "applicationCategory": "EducationalApplication",
+         "operatingSystem": "Web",
+         "description": "INJARA LMS is an AI-powered learning management system developed by Inspenox for colleges, training institutes and enterprises.",
+         "url": "https://inspenox.in/products/lms/",
+         "creator": {
+         "@type": "Organization",
+         "name": "Inspenox Pvt Ltd"
+        }
+      }
+    </script>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link href="../assets/css/styles.css" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon" />
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark transparent fixed-top">
+    <div class="container d-flex align-items-center">
+      <a class="navbar-brand d-flex align-items-center" href="../index.html">
+        <img id="siteLogo" src="../assets/images/dark11.png" data-dark="../assets/images/dark11.png"
+          data-light="../assets/images/light11.png" alt="Inspenox Logo" class="me-2"
+          style="height: 80px; width: auto" />
+      </a>
+
+      <!-- Spacer to push toggles to the right -->
+      <div class="ms-auto d-flex align-items-center">
+        <!-- Mobile Theme Toggle -->
+        <button class="theme-toggle-button d-lg-none me-2" onclick="toggleTheme()" id="themeToggleBtnMobile"
+          aria-label="Toggle theme">
+          <i class="bi" id="themeToggleIconMobile"></i>
+        </button>
+
+        <!-- Hamburger Menu Toggle -->
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+          aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="toggler-icon top-bar"></span>
+          <span class="toggler-icon middle-bar"></span>
+          <span class="toggler-icon bottom-bar"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#products">Products</a>
+          </li>
+          <li class="nav-item"><a class="nav-link" href="#plans">Plans</a></li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="../index.html#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://lms.inspenox.in/" target="_blank">Login</a>
+          </li>
+        </ul>
+        <!-- Desktop-only Toggle + Get Demo -->
+        <div class="d-none d-lg-flex align-items-center gap-2 ms-3">
+          <button class="theme-toggle-button" onclick="toggleTheme()" id="themeToggleBtnDesktop"
+            aria-label="Toggle theme">
+            <i class="bi" id="themeToggleIconDesktop"></i>
+          </button>
+          <a href="../index.html#contact" class="btn btn-gradient btn-sm">Get Demo</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+
+  <section class="hero" data-aos="fade-up">
+    <div class="container">
+      <div class="mb-3 text-center">
+        <span class="badge bg-primary px-3 py-2 rounded-pill fs-6"><i class="bi bi-robot me-1"></i> AI-Powered for Seamless Work</span>
+      </div>
+      <h1 class="display-4 fw-bold">
+        <span class="injara-logo-text">INJARA</span> LMS Platform
+      </h1>
+
+      <p class="lead mb-4">
+        Intelligent Learning. Skill Development. Career Growth.
+        <br />
+        A next-generation AI-powered Learning Management System built for seamless work across students, institutions & enterprises.
+      </p>
+
+      <div class="d-flex justify-content-center gap-3 flex-wrap">
+        <a href="https://lms.inspenox.in/" class="btn btn-theme px-4" target="_blank">
+          Login
+        </a>
+
+        <a href="../index.html#contact" class="btn btn-outline-primary px-4">
+          Request Demo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Key Features Section -->
+  <section id="features" class="py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">
+        LMS <span class="text-primary">Key Features</span>
+      </h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="p-4 border rounded-4 h-100" data-aos="fade-up">
+            <i class="bi bi-camera-video-fill fs-2 text-primary"></i>
+            <h5 class="fw-semibold mt-3">Live Classes</h5>
+            <p class="text-muted">
+              Host interactive online sessions with students in real-time.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 border rounded-4 h-100" data-aos="fade-up" data-aos-delay="100">
+            <i class="bi bi-journal-code fs-2 text-info"></i>
+            <h5 class="fw-semibold mt-3">Assignments & Quizzes</h5>
+            <p class="text-muted">
+              Create auto-graded quizzes and customized assignments.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="p-4 border rounded-4 h-100" data-aos="fade-up" data-aos-delay="200">
+            <i class="bi bi-clipboard-data fs-2 text-success"></i>
+            <h5 class="fw-semibold mt-3">Analytics Dashboard</h5>
+            <p class="text-muted">
+              Monitor learner performance and course engagement.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform Walkthrough -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">
+          Inside the <span class="injara-logo-text">INJARA</span> Platform
+        </h2>
+        <p class="text-muted">
+          Explore how students learn, practice, code and compete using our
+          intelligent LMS ecosystem.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Branding -->
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="walkthrough-card">
+            <img src="../assets/images/injara1.png" class="img-fluid rounded" />
+            <h5 class="mt-3">Institution Branding & Sponsored Promotions</h5>
+            <p>
+              Colleges and training institutions can promote admissions,
+              programs and campus branding directly within the LMS through
+              sponsored placements and SLA-based promotional banners across
+              the platform.
+            </p>
+          </div>
+        </div>
+        <!-- Dashboard -->
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="walkthrough-card">
+            <img src="../assets/images/injara3.png" class="img-fluid rounded" />
+            <h5 class="mt-3">Student Dashboard</h5>
+            <p>
+              Central hub where students access practice modules, coding
+              challenges, assessments, courses and leaderboard rankings.
+            </p>
+          </div>
+        </div>
+
+        <!-- Practice -->
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="walkthrough-card">
+            <img src="../assets/images/injara4.png" class="img-fluid rounded" />
+            <h5 class="mt-3">Practice Zone</h5>
+            <p>
+              Students can improve aptitude, reasoning and verbal skills
+              through hundreds of structured practice questions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Coding -->
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="walkthrough-card">
+            <img src="../assets/images/injara9.png" class="img-fluid rounded" />
+            <h5 class="mt-3">Coding Arena</h5>
+            <p>
+              Solve real programming challenges with built-in code editor,
+              compiler execution and automated evaluation.
+            </p>
+          </div>
+        </div>
+
+        <!-- Leaderboard -->
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="walkthrough-card">
+            <img src="../assets/images/injara10.png" class="img-fluid rounded" />
+            <h5 class="mt-3">Leaderboard & Gamification</h5>
+            <p>
+              Gamified ranking system motivates students through scores,
+              badges and competitive leaderboards.
+            </p>
+          </div>
+        </div>
+
+        <!-- Forum -->
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="walkthrough-card">
+            <img src="../assets/images/injara11.png" class="img-fluid rounded" />
+            <h5 class="mt-3">Community Forum</h5>
+            <p>
+              Students collaborate, ask questions and discuss solutions in a
+              moderated learning community.
+            </p>
+          </div>
+        </div>
+
+        <!-- AI -->
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="walkthrough-card">
+            <img src="../assets/images/injara12.png" class="img-fluid rounded" />
+            <h5 class="mt-3">AI Learning Assistant</h5>
+            <p>
+              Integrated AI assistant helps students understand concepts,
+              debug code and navigate the platform.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing section -->
+  <section id="plans" class="lms-pricing-section py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-5">
+        INJARA LMS <span class="text-primary">Pricing Plans</span>
+      </h2>
+
+      <div id="g_id_onload" data-client_id="357250829704-boceb6hh3l2ij5mfcvofjs16ovu3q732.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse" data-ux_mode="popup" data-auto_prompt="false">
+      </div>
+
+      <div id="googleBtn" style="display:none;"></div>
+
+      <div class="row g-4">
+        <!-- CORE PLAN -->
+        <div class="col-lg-4" data-aos="fade-up">
+          <div class="pricing-card premium-card">
+            <h4 class="plan-title">INJARA CORE</h4>
+            <div class="price">₹2,999 <span>/Year</span></div>
+            <p class="plan-tag">Starter Plan</p>
+
+            <div class="feature-category">
+              <h6>Practice Modules</h6>
+              <ul>
+                <li>Aptitude Practice</li>
+                <li>Reasoning Practice</li>
+                <li>Verbal Ability</li>
+              </ul>
+            </div>
+
+            <div class="feature-category">
+              <h6>Assessments</h6>
+              <ul>
+                <li>Aptitude Tests</li>
+                <li>Reasoning Tests</li>
+                <li>Verbal Tests</li>
+              </ul>
+            </div>
+
+            <div class="feature-category">
+              <h6>Performance System</h6>
+              <ul>
+                <li>Progress Tracking</li>
+                <li>Leaderboard</li>
+                <li>Digital Skill Badges</li>
+              </ul>
+            </div>
+
+            <div class="feature-category">
+              <h6>Platform Access</h6>
+              <ul>
+                <li>Student Dashboard</li>
+                <li>Standard Technical Support</li>
+                <li>Managed Cloud Platform</li>
+                <li>99.5% Platform Uptime</li>
+              </ul>
+            </div>
+
+            <button onclick="startCheckout('core')" class="btn btn-theme w-100 mt-3">
+              Go Core </button>
+          </div>
+        </div>
+
+        <!-- PLUS PLAN -->
+        <div class="col-lg-4" data-aos="fade-up">
+          <div class="pricing-card premium-card popular">
+            <span class="popular-badge">Most Popular</span>
+
+            <h4 class="plan-title">INJARA PLUS</h4>
+            <div class="price">₹4,499 <span>/Year</span></div>
+            <p class="plan-tag">Most Popular</p>
+
+            <div class="feature-category">
+              <h6>Skill Development</h6>
+              <ul>
+                <li>Coding Practice Lab</li>
+                <li>AI Learning Chatbot</li>
+                <li>Industry Practice Sets</li>
+                <li>Real-world Projects</li>
+              </ul>
+            </div>
+
+            <div class="feature-category">
+              <h6>Advanced Assessments</h6>
+              <ul>
+                <li>Coding Tests</li>
+                <li>Rank-Based Performance System</li>
+                <li>Proctored Exams</li>
+              </ul>
+            </div>
+
+            <div class="feature-category">
+              <h6>Career Growth</h6>
+              <ul>
+                <li>Internship Access (Free + Paid)</li>
+                <li>Certification After Completion</li>
+                <li>Career Analytics Dashboard</li>
+              </ul>
+            </div>
+
+            <div class="feature-category">
+              <h6>Platform Reliability</h6>
+              <ul>
+                <li>99.9% Uptime SLA</li>
+                <li>Priority Support</li>
+                <li>Secure Cloud Hosting</li>
+              </ul>
+            </div>
+
+            <button onclick="startCheckout('plus')" class="btn btn-theme w-100 mt-3">
+              Go Plus </button>
+          </div>
+        </div>
+
+        <!-- ELITE PLAN -->
+        <div class="col-lg-4" data-aos="fade-up">
+          <div class="pricing-card premium-card elite">
+            <h4 class="plan-title">INJARA ELITE 🏆</h4>
+            <div class="price">₹6,999 <span>/Year</span></div>
+            <p class="plan-tag">Best Outcome</p>
+
+            <div class="feature-category">
+              <h6>Placement & Hiring Tools</h6>
+              <ul>
+                <li>Placement Assistance Portal</li>
+                <li>Recruiter Visibility Dashboard</li>
+                <li>Hiring Company Access</li>
+                <li>Paid Internship Priority</li>
+                <li>Stipend Internship Programs</li>
+              </ul>
+            </div>
+
+            <div class="feature-category">
+              <h6>Advanced Learning</h6>
+              <ul>
+                <li>AI Career Mentor</li>
+                <li>Verified Skill Profiles</li>
+                <li>Proctored Coding Arena</li>
+                <li>Industry Mentor Sessions</li>
+              </ul>
+            </div>
+
+            <div class="feature-category">
+              <h6>Community Access</h6>
+              <ul>
+                <li>Industry Mentor Forums</li>
+                <li>Student Community</li>
+                <li>Live Career Webinars</li>
+              </ul>
+            </div>
+
+            <div class="feature-category">
+              <h6>Enterprise Support</h6>
+              <ul>
+                <li>Dedicated Support Team</li>
+                <li>SLA Priority Support</li>
+                <li>99.99% Uptime Guarantee</li>
+                <li>Enterprise Security Compliance</li>
+              </ul>
+            </div>
+
+            <button onclick="startCheckout('elite')" class="btn btn-theme w-100 mt-3">
+              Go Elite </button>
+          </div>
+        </div>
+
+        <p class="text-center small mt-3">
+          Prices are inclusive of platform access and support services. Taxes
+          may apply. Features may vary based on subscription plan. Terms and
+          SLA apply.
+        </p>
+
+        <!-- BULK PRICING CTA -->
+        <div class="bulk-pricing-box mt-5 p-4 rounded-4" data-aos="fade-up">
+          <h5 class="fw-semibold mb-2">
+            Training Partner / College Bulk Pricing Available
+          </h5>
+          <p class="small mb-3">
+            Special institutional pricing for universities, training
+            institutes, corporates & resellers.
+          </p>
+          <a href="../index.html#contact" class="btn btn-gradient px-4">
+            Contact for Bulk Pricing
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURE COMPARISON TABLE -->
+  <section class="py-5 comparison-section">
+    <div class="container" data-aos="fade-up">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold">
+          <span class="injara-logo-text">INJARA</span> LMS
+        </h2>
+        <p class="lead">Complete Feature Comparison</p>
+      </div>
+
+      <div class="table-responsive premium-table-wrapper">
+        <table class="table premium-comparison-table align-middle text-center">
+          <thead>
+            <tr>
+              <th class="feature-col text-start">Features</th>
+              <th>CORE</th>
+              <th class="plus-head">PLUS</th>
+              <th class="elite-head">ELITE 🏆</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td class="text-start fw-semibold">Price (Yearly)</td>
+              <td>₹2,999</td>
+              <td>₹4,499</td>
+              <td>₹6,999</td>
+            </tr>
+
+            <!-- LEARNING FEATURES -->
+            <tr>
+              <td class="text-start fw-bold">Learning Modules</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="text-start">Aptitude Practice</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>✔</td>
+            </tr>
+            <tr>
+              <td class="text-start">Reasoning Practice</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>✔</td>
+            </tr>
+            <tr>
+              <td class="text-start">Verbal Practice</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>✔</td>
+            </tr>
+            <tr>
+              <td class="text-start">Coding Practice Lab</td>
+              <td>✖</td>
+              <td>✔</td>
+              <td>✔</td>
+            </tr>
+            <tr>
+              <td class="text-start">AI Learning Chatbot</td>
+              <td>✖</td>
+              <td>✔</td>
+              <td>✔</td>
+            </tr>
+            <tr>
+              <td class="text-start">Industry Practice Sets</td>
+              <td>✖</td>
+              <td>✔</td>
+              <td>✔</td>
+            </tr>
+            <tr>
+              <td class="text-start">Real-world Projects</td>
+              <td>✖</td>
+              <td>✔</td>
+              <td>✔</td>
+            </tr>
+
+            <!-- ASSESSMENTS -->
+            <tr>
+              <td class="text-start fw-bold">Assessments</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="text-start">Aptitude Tests</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>✔</td>
+            </tr>
+            <tr>
+              <td class="text-start">Coding Tests</td>
+              <td>✖</td>
+              <td>✔</td>
+              <td>✔</td>
+            </tr>
+            <tr>
+              <td class="text-start">Proctored Exams</td>
+              <td>✖</td>
+              <td>✔</td>
+              <td>✔</td>
+            </tr>
+            <tr>
+              <td class="text-start">Rank-Based Leaderboard</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>✔</td>
+            </tr>
+
+            <!-- CAREER -->
+            <tr>
+              <td class="text-start fw-bold">Career Support</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="text-start">Internship Access</td>
+              <td>✖</td>
+              <td>✔</td>
+              <td>✔</td>
+            </tr>
+            <tr>
+              <td class="text-start">Placement Assistance Portal</td>
+              <td>✖</td>
+              <td>✖</td>
+              <td>✔</td>
+            </tr>
+            <tr>
+              <td class="text-start">Recruiter Visibility</td>
+              <td>✖</td>
+              <td>✖</td>
+              <td>✔</td>
+            </tr>
+            <tr>
+              <td class="text-start">AI Career Mentor</td>
+              <td>✖</td>
+              <td>✖</td>
+              <td>✔</td>
+            </tr>
+            <tr>
+              <td class="text-start">Verified Skill Profiles</td>
+              <td>✖</td>
+              <td>✖</td>
+              <td>✔</td>
+            </tr>
+
+            <!-- COMMUNITY -->
+            <tr>
+              <td class="text-start fw-bold">Community</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="text-start">Industry Mentor Forums</td>
+              <td>✖</td>
+              <td>✖</td>
+              <td>✔</td>
+            </tr>
+            <tr>
+              <td class="text-start">Student Community Access</td>
+              <td>✖</td>
+              <td>✖</td>
+              <td>✔</td>
+            </tr>
+
+            <!-- PLATFORM -->
+            <tr>
+              <td class="text-start fw-bold">Platform & Support</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <td class="text-start">Cloud Hosting</td>
+              <td>✔</td>
+              <td>✔</td>
+              <td>✔</td>
+            </tr>
+            <tr>
+              <td class="text-start">Uptime SLA</td>
+              <td>99.5%</td>
+              <td>99.9%</td>
+              <td>99.99%</td>
+            </tr>
+            <tr>
+              <td class="text-start">Technical Support</td>
+              <td>Standard</td>
+              <td>Priority</td>
+              <td>Dedicated</td>
+            </tr>
+            <tr>
+              <td class="text-start">Dedicated SLA Manager</td>
+              <td>✖</td>
+              <td>✖</td>
+              <td>✔</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="text-center small mt-3">
+        All plans are billed annually. Features are subject to subscription
+        tier. Placement assistance is facilitation-based and does not
+        guarantee employment. Taxes may apply.
+      </p>
+    </div>
+  </section>
+
+  <!-- LMS for Industries -->
+  <section class="py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-4">
+        Designed for <span class="text-primary">All Institutions</span>
+      </h2>
+      <p class="text-muted mb-4">
+        Flexible LMS modules for schools, colleges, training centers &
+        enterprises.
+      </p>
+      <div class="row g-4 justify-content-center">
+        <div class="col-6 col-md-3">
+          <div class="card h-100 p-4 rounded-4 text-center shadow-sm border-0" data-aos="zoom-in">
+            <div class="d-flex justify-content-center mb-3">
+              <div class="icon-wrapper bg-info-subtle text-info rounded-circle">
+                <i class="bi bi-building fs-3"></i>
+              </div>
+            </div>
+            <h6 class="fw-semibold mb-2">Schools</h6>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="card h-100 p-4 rounded-4 text-center shadow-sm border-0" data-aos="zoom-in" data-aos-delay="100">
+            <div class="d-flex justify-content-center mb-3">
+              <div class="icon-wrapper bg-warning-subtle text-warning rounded-circle">
+                <i class="bi bi-mortarboard-fill fs-3"></i>
+              </div>
+            </div>
+            <h6 class="fw-semibold mb-2">Colleges</h6>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="card h-100 p-4 rounded-4 text-center shadow-sm border-0" data-aos="zoom-in" data-aos-delay="200">
+            <div class="d-flex justify-content-center mb-3">
+              <div class="icon-wrapper bg-danger-subtle text-danger rounded-circle">
+                <i class="bi bi-people-fill fs-3"></i>
+              </div>
+            </div>
+            <h6 class="fw-semibold mb-2">Training Institutes</h6>
+          </div>
+        </div>
+
+        <div class="col-6 col-md-3">
+          <div class="card h-100 p-4 rounded-4 text-center shadow-sm border-0" data-aos="zoom-in" data-aos-delay="300">
+            <div class="d-flex justify-content-center mb-3">
+              <div class="icon-wrapper bg-success-subtle text-success rounded-circle">
+                <i class="bi bi-building-gear fs-3"></i>
+              </div>
+            </div>
+            <h6 class="fw-semibold mb-2">Enterprises</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Platform Achievements + Why Choose Us -->
+  <section class="py-5 platform-section">
+    <div class="container">
+      <div class="row g-4 align-items-stretch">
+        <!-- Platform Achievements -->
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="info-card h-100">
+            <h3 class="fw-bold mb-3">Platform Achievements</h3>
+
+            <span class="achievement-badge"> 10,000+ Active Learners </span>
+
+            <ul class="info-list mt-4">
+              <li>Growing learner community with 120+ industry modules</li>
+              <li>Professionally designed real-world skill programs</li>
+              <li>300+ hands-on projects across domains</li>
+              <li>98.9% skill success rate</li>
+              <li>Strong student performance outcomes</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="col-lg-6" data-aos="fade-up">
+          <div class="info-card h-100">
+            <h3 class="fw-bold mb-3">Why Choose INJARA ?</h3>
+
+            <ul class="info-list">
+              <li>Enterprise-grade LMS platform expertise</li>
+              <li>AI-powered learning ecosystem</li>
+              <li>Cloud-native scalable infrastructure</li>
+              <li>300+ hands-on project experiences</li>
+              <li>Secure, reliable, adaptive platform</li>
+              <li>Long-term institutional partnerships</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Carousel -->
+  <section class="py-5 testimonials-section">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-5">
+        What Learners Say About <span class="text-primary">INJARA</span>
+      </h2>
+
+      <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <!-- SLIDE 1 -->
+          <div class="carousel-item active">
+            <div class="row justify-content-center g-4">
+              <div class="col-md-4" data-aos="zoom-in">
+                <div class="testimonial-card">
+                  <img src="https://i.pravatar.cc/150?img=12" class="testimonial-img" />
+                  <p>"INJARA helped me improve coding skills."</p>
+                  <h6>Rahul Sharma</h6>
+                  <small>Engineering Student</small>
+                </div>
+              </div>
+
+              <div class="col-md-4" data-aos="zoom-in">
+                <div class="testimonial-card">
+                  <img src="https://i.pravatar.cc/150?img=5" class="testimonial-img" />
+                  <p>"AI mentor made learning structured."</p>
+                  <h6>Priya Reddy</h6>
+                  <small>Data Analyst</small>
+                </div>
+              </div>
+
+              <div class="col-md-4" data-aos="zoom-in">
+                <div class="testimonial-card">
+                  <img src="https://i.pravatar.cc/150?img=8" class="testimonial-img" />
+                  <p>"Excellent analytics & LMS support."</p>
+                  <h6>Dr. Kumar</h6>
+                  <small>Institute Director</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 2 -->
+          <!-- <div class="carousel-item">
+                        <div class="row justify-content-center g-4">
+    
+                            <div class="col-md-4">
+                                <div class="testimonial-card">
+                                    <img src="https://i.pravatar.cc/150?img=9" class="testimonial-img">
+                                    <p>"Very practical learning platform."</p>
+                                    <h6>Arjun Mehta</h6>
+                                    <small>Developer</small>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4">
+                                <div class="testimonial-card">
+                                    <img src="https://i.pravatar.cc/150?img=15" class="testimonial-img">
+                                    <p>"Helped me crack interviews."</p>
+                                    <h6>Sneha Rao</h6>
+                                    <small>Graduate</small>
+                                </div>
+                            </div>
+    
+                            <div class="col-md-4">
+                                <div class="testimonial-card">
+                                    <img src="https://i.pravatar.cc/150?img=20" class="testimonial-img">
+                                    <p>"Best LMS for institutions."</p>
+                                    <h6>Prof. Singh</h6>
+                                    <small>Trainer</small>
+                                </div>
+                            </div>
+    
+                        </div>
+                    </div> -->
+        </div>
+
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact CTA -->
+  <section class="py-5-tertiary text-center">
+    <div class="container" data-aos="zoom-in">
+      <h3 class="fw-bold">Ready to launch your learning platform?</h3>
+      <p class="text-muted mb-4">
+        Talk to our experts or schedule a live demo of the LMS Portal.
+      </p>
+      <a href="../index.html#contact" class="btn btn-theme">Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="siteFooter" class="text-center py-4 mt-5">
+    <div class="container">
+      <p class="mb-1 mb-0">&copy; 2025 Inspenox Inc.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, once: true });
+  </script>
+  <script>
+    window.onload = function () {
+      google.accounts.id.renderButton(
+        document.getElementById("googleBtn"),
+        { theme: "outline", size: "large" }
+      );
+    };
+
+    let selectedPlan = null;
+
+    // 🔥 Step 1: click plan → trigger Google
+    function startCheckout(plan) {
+
+      selectedPlan = plan;
+
+      const email = localStorage.getItem("user_email");
+
+      // ✅ If already logged in → skip
+      if (email) {
+        redirectToCheckout();
+        return;
+      }
+
+      // 🔥 Trigger hidden Google button click
+      const btn = document.querySelector("#googleBtn div[role=button]");
+      if (btn) {
+        btn.click();
+      } else {
+        alert("Google login not ready. Refresh page.");
+      }
+    }
+
+    function handleCredentialResponse(response) {
+
+      const data = parseJwt(response.credential);
+
+      const email = data.email;
+      const name = data.name;
+
+      // Save user
+      localStorage.setItem("user_email", email);
+      localStorage.setItem("user_name", name);
+
+      // 🔥 Continue flow automatically
+      redirectToCheckout();
+    }
+    function redirectToCheckout() {
+
+      const email = localStorage.getItem("user_email");
+      const name = localStorage.getItem("user_name");
+
+      window.location.href =
+        `../checkout.html?plan=${selectedPlan}&email=${email}&name=${encodeURIComponent(name)}`;
+    }
+
+    function parseJwt(token) {
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(atob(base64).split('').map(function (c) {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+
+      return JSON.parse(jsonPayload);
+    }
+
+
+  </script>
+</body>
+
+</html>

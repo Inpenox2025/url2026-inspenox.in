@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ERP System | Inspenox</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+        <!-- Favicon -->
+    <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon" />
+    <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar" class="navbar navbar-expand-lg navbar-dark transparent fixed-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <img src="../assets/images/Recovered.png" alt="Inspenox Logo" class="me-2"
+                    style="height: 80px; width: auto;" />
+            </a>
+
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navMenu">
+                <span class="toggler-icon top-bar"></span>
+                <span class="toggler-icon middle-bar"></span>
+                <span class="toggler-icon bottom-bar"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contact">Contact</a></li>
+                    <li class="nav-item d-lg-none mt-2">
+                        <button class="theme-toggle-button w-auto mx-3" onclick="toggleTheme()"
+                            id="themeToggleBtnMobile">
+                            <i class="bi" id="themeToggleIconMobile"></i>
+                        </button>
+                    </li>
+                </ul>
+                <div class="d-none d-lg-flex align-items-center gap-2 ms-3">
+                    <button class="theme-toggle-button" onclick="toggleTheme()" id="themeToggleBtnDesktop">
+                        <i class="bi" id="themeToggleIconDesktop"></i>
+                    </button>
+                    <a href="../index.html#contact" class="btn btn-gradient btn-sm">Get Demo</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero py-5 mt-5" data-aos="fade-up">
+        <div class="container text-center">
+            <h1 class="display-5 fw-bold">Enterprise Resource Planning (ERP)</h1>
+            <p class="lead">Automate HR, Inventory, Payroll, CRM & more with a unified platform</p>
+            <a href="../index.html#contact" class="btn btn-theme mt-3">Request a Demo</a>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-5 bg-body-secondary">
+        <div class="container">
+            <h2 class="fw-bold text-center mb-5">Key <span class="text-primary">Features</span></h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card h-100 p-4">
+                        <i class="bi bi-people-fill fs-1 text-info mb-3"></i>
+                        <h5>HR Management</h5>
+                        <p class="text-muted">Track attendance, leaves, performance, and employee records.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card h-100 p-4">
+                        <i class="bi bi-currency-rupee fs-1 text-success mb-3"></i>
+                        <h5>Payroll Automation</h5>
+                        <p class="text-muted">Automated salary calculations, TDS, and payslips.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card h-100 p-4">
+                        <i class="bi bi-graph-up-arrow fs-1 text-warning mb-3"></i>
+                        <h5>CRM & Sales</h5>
+                        <p class="text-muted">Manage leads, deals, follow-ups, and customer communication.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row g-4 text-center mt-4">
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card h-100 p-4">
+                        <i class="bi bi-box-seam fs-1 text-primary mb-3"></i>
+                        <h5>Inventory Control</h5>
+                        <p class="text-muted">Track stocks, supplies, warehouse entries and exits in real-time.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up">
+                    <div class="card h-100 p-4">
+                        <i class="bi bi-bar-chart-line-fill fs-1 text-danger mb-3"></i>
+                        <h5>Insightful Reports</h5>
+                        <p class="text-muted">Generate finance, operations & HR reports with one click.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industries Section -->
+    <section class="py-5 industries-section">
+        <div class="container text-center">
+            <h2 class="fw-bold mb-4">Built for Every <span class="text-primary">Industry</span></h2>
+            <p class="text-muted mb-5">Flexible ERP modules tailored to your business scale and needs.</p>
+
+            <div class="row g-4 justify-content-center">
+
+                <!-- Industry Card -->
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="industry-card card h-100 p-4 rounded-4 text-center shadow-sm border-0"
+                        data-aos="fade-up">
+                        <div class="d-flex justify-content-center mb-3">
+                            <div class="icon-wrapper text-info bg-info-subtle rounded-circle">
+                                <i class="bi bi-gear-fill fs-3"></i>
+                            </div>
+                        </div>
+                        <h6 class="fw-semibold mb-2">Manufacturing</h6>
+                        <p class="small text-muted">Track production, inventory, and supply chain with ease.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="industry-card card h-100 p-4 rounded-4 text-center shadow-sm border-0"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="d-flex justify-content-center mb-3">
+                            <div class="icon-wrapper text-danger bg-danger-subtle rounded-circle">
+                                <i class="bi bi-heart-pulse-fill fs-3"></i>
+                            </div>
+                        </div>
+                        <h6 class="fw-semibold mb-2">Healthcare</h6>
+                        <p class="small text-muted">Manage patient data, pharmacy, billing & compliance.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="industry-card card h-100 p-4 rounded-4 text-center shadow-sm border-0"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div class="d-flex justify-content-center mb-3">
+                            <div class="icon-wrapper text-warning bg-warning-subtle rounded-circle">
+                                <i class="bi bi-shop-window fs-3"></i>
+                            </div>
+                        </div>
+                        <h6 class="fw-semibold mb-2">Retail</h6>
+                        <p class="small text-muted">Smart inventory and POS integrations for faster retail.</p>
+                    </div>
+                </div>
+
+                <div class="col-12 col-sm-6 col-md-3">
+                    <div class="industry-card card h-100 p-4 rounded-4 text-center shadow-sm border-0"
+                        data-aos="fade-up" data-aos-delay="300">
+                        <div class="d-flex justify-content-center mb-3">
+                            <div class="icon-wrapper text-primary bg-primary-subtle rounded-circle">
+                                <i class="bi bi-mortarboard-fill fs-3"></i>
+                            </div>
+                        </div>
+                        <h6 class="fw-semibold mb-2">Education</h6>
+                        <p class="small text-muted">Integrate academic, admin & finance modules smoothly.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Contact (reuse section from index or link) -->
+    <section id="contact" class="py-5 bg-body-tertiary text-center">
+        <div class="container">
+            <h3 class="fw-bold mb-4">Want to see the ERP in Action?</h3>
+            <p class="mb-4 text-muted">Book a live demo and discover how Inspenox ERP can transform your operations.</p>
+            <a href="../index.html#contact" class="btn btn-theme">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="siteFooter" class="text-center py-4 mt-5">
+        <div class="container">
+            <p class="mb-1 mb-0">&copy; 2025 Inspenox Inc.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+    </script>
+</body>
+
+</html>

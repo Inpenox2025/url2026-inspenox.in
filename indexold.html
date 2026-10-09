@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Inspenox | Industry 4.0 Tech Solutions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+  <meta name="color-scheme" content="dark light" />
+  <!-- Favicon -->
+  <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="assets/images/favicon.png" type="image/x-icon" />
+  <!-- no cache storage -->
+  <meta http-equiv="Cache-Control" content="no-store" />
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
+
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav id="navbar" class="navbar navbar-expand-lg navbar-dark transparent fixed-top">
+    <div class="container d-flex align-items-center">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <img id="siteLogo" src="assets/images/dark11.png" data-dark="assets/images/dark11.png"
+          data-light="assets/images/light11.png" alt="Inspenox Logo" class="me-2" style="height:80px;width:auto;">
+      </a>
+
+      <!-- Spacer to push toggles to the right -->
+      <div class="ms-auto d-flex align-items-center">
+        <!-- Mobile Theme Toggle -->
+        <button class="theme-toggle-button d-lg-none me-2" onclick="toggleTheme()" id="themeToggleBtnMobile"
+          aria-label="Toggle theme">
+          <i class="bi" id="themeToggleIconMobile"></i>
+        </button>
+
+        <!-- Hamburger Menu Toggle -->
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu"
+          aria-controls="navMenu" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="toggler-icon top-bar"></span>
+          <span class="toggler-icon middle-bar"></span>
+          <span class="toggler-icon bottom-bar"></span>
+        </button>
+      </div>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+          <!-- <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li> -->
+          <li class="nav-item"><a class="nav-link" href="./products/lms.html#plans">Plans</a></li>
+          <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://lms.inspenox.in/" target="_blank">Login</a></li>
+        </ul>
+
+        <!-- Desktop-only Toggle + Get Demo -->
+        <div class="d-none d-lg-flex align-items-center gap-2 ms-3">
+          <button class="theme-toggle-button" onclick="toggleTheme()" id="themeToggleBtnDesktop"
+            aria-label="Toggle theme">
+            <i class="bi" id="themeToggleIconDesktop"></i>
+          </button>
+          <a href="#contact" class="btn btn-gradient btn-sm">Get Demo</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+
+
+  <!-- Hero Section -->
+  <section class="hero" data-aos="fade-up">
+    <div class="container">
+      <span class="badge badge-glow rounded-pill mb-3" style="color: #000">India's First Industry 4.0 Platform</span>
+      <h1 class="display-5 fw-bold">
+        Empowering Enterprises with
+        <span class="text-info">Intelligent Solutions</span>
+      </h1>
+      <p class="lead mt-3">
+        From LMS to AI-powered OEM automation, Inspenox transforms industries
+        for the digital future.
+      </p>
+      <a href="#contact" class="btn btn-theme mt-4">Request Demo →</a>
+    </div>
+  </section>
+
+  <!-- Products Section -->
+  <section id="products" class="py-5 products-section text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-3">
+        Our <span class="text-primary">Products</span>
+      </h2>
+      <p class="text-muted mb-5"></p>
+      <div class="row g-4 justify-content-center">
+        <!-- ERP Card -->
+        <!-- <div class="col-md-3 col-sm-6">
+            <div
+              class="product-card card h-100 border-0 p-4 text-start"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="text-center mb-3">
+                <img
+                  src="https://img.icons8.com/?size=100&id=c0zAUT55leRo&format=png"
+                  class="product-icon"
+                  alt="ERP"
+                />
+              </div>
+              <h5 class="fw-semibold">ERP System</h5>
+              <p class="small">
+                Automate HR, Inventory, Payroll & CRM workflows with
+                enterprise-grade ERP.
+              </p>
+              <a
+                href="products/erp.html"
+                class="btn btn-outline-info btn-sm mt-auto"
+                >Learn More</a
+              >
+            </div>
+          </div> -->
+
+        <!-- POS Card -->
+        <!-- <div class="col-md-3 col-sm-6">
+            <div
+              class="product-card card h-100 border-0 p-4 text-start"
+              data-aos="zoom-in"
+              data-aos-delay="200"
+            >
+              <div class="text-center mb-3">
+                <img
+                  src="https://img.icons8.com/?size=100&id=aOs12mC6NJh9&format=png"
+                  class="product-icon"
+                  alt="POS"
+                />
+              </div>
+              <h5 class="fw-semibold">POS System</h5>
+              <p class="small">
+                Smart billing with inventory & cloud sync for retail and pharma
+                outlets.
+              </p>
+              <a
+                href="products/pos.html"
+                class="btn btn-outline-success btn-sm mt-auto"
+                >Learn More</a
+              >
+            </div>
+          </div> -->
+
+        <!-- LMS Card -->
+        <div class="col-md-6 col-sm-12">
+          <div class="product-card premium-product-card" data-aos="zoom-in">
+
+            <div class="product-icon-wrapper">
+              <img src="https://img.icons8.com/?size=100&id=7F71NyvKDYDW&format=png" class="product-icon" alt="LMS">
+            </div>
+
+            <h5 class="fw-semibold">LMS Portals</h5>
+
+            <p class="small">
+              Host courses, quizzes & certifications with complete
+              learning management platform for institutions.
+            </p>
+
+            <a href="products/lms.html" class="btn btn-product mt-auto">
+              Learn More
+            </a>
+
+          </div>
+        </div>
+
+        <!-- OEM Card -->
+        <div class="col-md-6 col-sm-12">
+          <div class="product-card premium-product-card" data-aos="zoom-in">
+
+            <div class="product-icon-wrapper">
+              <img src="https://img.icons8.com/?size=100&id=59023&format=png" class="product-icon" alt="OEM">
+            </div>
+
+            <h5 class="fw-semibold">OEM Automation</h5>
+
+            <p class="small">
+              AI-driven automation software for smart machines,
+              industrial workflows and factory control systems.
+            </p>
+
+            <a href="products/oem.html" class="btn btn-product mt-auto">
+              Learn More
+            </a>
+
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Backed By Section -->
+  <!-- <section id="partners" class="py-5 backed-by-section text-center">
+    <div class="container">
+      <h2 class="fw-bold mb-3">
+        Our Trusted <span class="text-primary">Partners</span>
+      </h2>
+      <p class="text-muted mb-5">
+        Backed by leading institutions and government initiatives driving
+        innovation in India
+      </p>
+      <div class="row justify-content-center align-items-center g-4">
+        <div class="col-6 col-sm-4 col-md-2" data-aos="fade-up">
+          <div class="partner-logo">
+            <img src="assets/images/aic.jpg" alt="AIC Seed" class="img-fluid" />
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2" data-aos="fade-up">
+          <div class="partner-logo">
+            <img src="assets/images/meity1.png" alt="MeitY Startup Hub" class="img-fluid" />
+          </div>
+        </div>
+        <div class="col-6 col-sm-4 col-md-2" data-aos="fade-up">
+          <div class="partner-logo">
+            <img src="assets/images/iiser.png" alt="IISER Pune" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section> -->
+
+  <!-- Meet Our Team Section -->
+  <section id="team" class="team-section py-5">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3">
+        Meet Our <span class="text-primary">Product Leads</span>
+      </h2>
+      <p class="text-muted mb-5">
+        Each product is led by experts combining domain knowledge, technical
+        mastery, and leadership excellence.
+      </p>
+
+      <div class="row g-4 justify-content-center">
+        <!-- ERP Lead -->
+        <div class="col-md-3 col-sm-6">
+          <div class="team-card glass-effect p-3">
+            <img src="assets/images/kris.png" alt="ERP Lead" class="team-img img-fluid mb-3 rounded-circle shadow" />
+            <h5 class="fw-semibold">Dr. Krishna</h5>
+            <p class="text-primary small mb-2">Head of ERP Systems</p>
+            <p class="small text-muted">
+              Leads ERP architecture with deep expertise in enterprise-scale
+              solutions across HR, Payroll & CRM automation.
+            </p>
+          </div>
+        </div>
+
+        <!-- LMS Lead -->
+        <div class="col-md-3 col-sm-6">
+          <div class="team-card glass-effect p-3">
+            <img src="assets/images/barath.png" alt="LMS Lead" class="team-img img-fluid mb-3 rounded-circle shadow" />
+            <h5 class="fw-semibold">Mr. Sarath</h5>
+            <p class="text-primary small mb-2">Head of LMS Systems</p>
+            <p class="small text-muted">
+              Drives innovation in academic platforms, integrating AI,
+              assessments, and LMS tools for seamless learning delivery.
+            </p>
+          </div>
+        </div>
+
+        <!-- POS Lead -->
+        <div class="col-md-3 col-sm-6">
+          <div class="team-card glass-effect p-3">
+            <img src="assets/images/barath.png" alt="POS Lead" class="team-img img-fluid mb-3 rounded-circle shadow" />
+            <h5 class="fw-semibold">Mr. Bharath</h5>
+            <p class="text-primary small mb-2">
+              Lead Developer – POS Systems
+            </p>
+            <p class="small text-muted">
+              Full-stack specialist architecting real-time POS platforms with
+              smart inventory & billing automation features.
+            </p>
+          </div>
+        </div>
+
+        <!-- OEM Lead -->
+        <div class="col-md-3 col-sm-6">
+          <div class="team-card glass-effect p-3">
+            <img src="assets/images/naga.png" alt="OEM Lead" class="team-img img-fluid mb-3 rounded-circle shadow" />
+            <h5 class="fw-semibold">Mrs. Nagalakshmi</h5>
+            <p class="text-primary small mb-2">OEM Solutions Architect</p>
+            <p class="small text-muted">
+              Innovates at the intersection of hardware & software, delivering
+              robust OEM integrations tailored for Industry 4.0.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Success Stories Section -->
+  <section id="testimonials" class="py-5 product-testimonial-section">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3">
+        Product <span class="text-primary">Success Stories</span>
+      </h2>
+      <p class="text-muted mb-5">
+        How organizations are using our software to streamline operations and
+        scale intelligently.
+      </p>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="testi-card h-100 p-4 rounded-4">
+            <h5 class="fw-semibold">Melso Tech Solutions Pvt. Ltd.</h5>
+            <div class="highlight green">
+              60% faster payroll<br /><small>Improved HR and finance coordination</small>
+            </div>
+            <p class="mb-0">
+              Our ERP System enabled TechCorp to streamline their HR and
+              inventory workflows...
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="testi-card h-100 p-4 rounded-4">
+            <h5 class="fw-semibold">GreenMart Supermarket</h5>
+            <div class="highlight blue">
+              35% faster checkout<br /><small>Better customer flow</small>
+            </div>
+            <p class="mb-0">
+              GreenMart used our POS system to enable fast, synced billing
+              across counters...
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4" data-aos="fade-up">
+          <div class="testi-card h-100 p-4 rounded-4">
+            <h5 class="fw-semibold">EduSpark Academy</h5>
+            <div class="highlight yellow">
+              2x student engagement<br /><small>Self-paced learning improved outcomes</small>
+            </div>
+            <p class="mb-0">
+              EduSpark used our LMS Portal to launch online programs with
+              certifications...
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- contact section -->
+  <section id="contact" class="py-5 product-contact-section">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3">
+        Contact <span class="text-primary">Us</span>
+      </h2>
+      <div class="row g-4 align-items-stretch">
+        <!-- Left Contact Info -->
+        <div class="col-md-5" data-aos="fade-up">
+          <div class="card h-100 p-4 rounded-4 contact-card">
+            <h4 class="fw-bold mb-3">Need Help With Our Products?</h4>
+            <p class="text-muted">
+              Connect with our team to get demos, pricing, or deployment
+              support.
+            </p>
+
+            <ul class="list-unstyled mt-4">
+              <li class="mb-4 d-flex flex-column flex-sm-row align-items-start text-start">
+                <i class="bi bi-telephone-fill fs-5 me-sm-3 mb-2 mb-sm-0 text-info"></i>
+                <div>
+                  <strong>Phone:</strong><br />
+                  <span class="text-muted">+91 94913 30702</span>
+                </div>
+              </li>
+              <li class="mb-4 d-flex flex-column flex-sm-row align-items-start text-start">
+                <i class="bi bi-envelope-fill fs-5 me-sm-3 mb-2 mb-sm-0 text-success"></i>
+                <div>
+                  <strong>Email:</strong><br />
+                  <span class="text-muted"><a href="mailto:info@inspenox.in">info@inspenox.in</a></span>
+                </div>
+              </li>
+              <!-- <li class="mb-3 d-flex flex-column flex-sm-row align-items-start text-start">
+                <i class="bi bi-geo-alt-fill fs-5 me-sm-3 mb-2 mb-sm-0 text-danger"></i>
+                <div>
+                  <strong>Address:</strong><br />
+                  <span class="text-muted">Somanath Heights, Andhra Bank Colony, Nagavanam, New
+                    Gaigolupadu, Kakinada 533005</span>
+                </div>
+              </li> -->
+            </ul>
+            <div class="whatsapp-box mt-4 p-3 rounded-3 bg-success-subtle border border-success-subtle">
+              <h6 class="d-flex align-items-center text-success mb-2">
+                <i class="bi bi-whatsapp me-2 fs-5"></i>WhatsApp Support
+              </h6>
+              <ul class="small ps-3 mb-3 text-start text-body-secondary">
+                <li>24/7 Product Help</li>
+                <li>Demo Scheduling</li>
+                <li>Partnership Inquiries</li>
+              </ul>
+              <a href="https://wa.me/919491330702" class="btn btn-success btn-sm w-100">
+                <i class="bi bi-whatsapp"></i> Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Contact Form -->
+        <div class="col-md-7" data-aos="fade-up">
+          <div class="card h-100 p-4 rounded-4 contact-card">
+            <h4 class="fw-bold mb-4">Product Inquiry Form</h4>
+            <form>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Full Name *" required />
+                </div>
+                <div class="col-md-6">
+                  <input type="email" class="form-control" placeholder="Email Address *" required />
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Organization" />
+                </div>
+                <div class="col-md-6">
+                  <input type="text" class="form-control" placeholder="Phone Number" />
+                </div>
+                <div class="col-md-6">
+                  <select class="form-select">
+                    <option selected disabled>Your Role</option>
+                    <option>IT Manager</option>
+                    <option>Procurement Head</option>
+                    <option>Administrator</option>
+                    <option>Partner</option>
+                  </select>
+                </div>
+                <div class="col-md-6">
+                  <select class="form-select">
+                    <option selected disabled>Product of Interest</option>
+                    <!-- <option>ERP System</option> -->
+                    <!-- <option>POS System</option> -->
+                    <option>LMS Portal</option>
+                    <option>OEM Automation</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <textarea class="form-control" rows="4"
+                    placeholder="Briefly describe your requirements..."></textarea>
+                </div>
+                <div class="col-12 d-flex align-items-center gap-2">
+                  <input type="checkbox" class="form-check-input" id="agreeCheck" required />
+                  <label for="agreeCheck" class="form-check-label small">
+                    I agree to the<a href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Terms of Service</a>
+                    and
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a>
+                  </label>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-theme w-100">
+                    <i class="bi bi-send me-2"></i>Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="siteFooter" class="text-center py-4 mt-5">
+    <div class="container">
+      <p class="mb-1 mb-0">&copy; 2025 Inspenox Inc.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800, // optional, default 400ms
+      once: true, // animate only once on scroll
+    });
+  </script>
+  <script>
+    window.addEventListener("beforeunload", function () {
+      // Clear cache-related data before leaving page
+      if ('caches' in window) {
+        caches.keys().then(function (names) {
+          for (let name of names) caches.delete(name);
+        });
+      }
+    });
+
+    // document.querySelectorAll('link[rel="stylesheet"], script[src]').forEach(el => {
+    //   const srcAttr = el.tagName === 'LINK' ? 'href' : 'src';
+    //   const url = new URL(el[srcAttr], location.href);
+    //   url.searchParams.set('_v', Date.now()); // Append timestamp
+    //   el[srcAttr] = url.href;
+    // });
+
+
+  </script>
+
+  <!-- Terms & Conditions Modal -->
+  <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content border-0 shadow-sm rounded-4">
+        <div class="modal-header bg-dark text-white border-0">
+          <h5 class="modal-title" id="termsModalLabel">Terms & Conditions</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-start small" style="line-height: 1.7;">
+          <p><strong>Effective Date:</strong> July 31, 2025</p>
+          <p>Welcome to Inspenox. By using our website, applications, or services, you agree to be legally bound by the
+            following terms and conditions:</p>
+
+          <h6>1. Use of Service</h6>
+          <p>Our platforms are designed for professional and educational purposes. You must be at least 18 years old or
+            have parental consent to use our services.</p>
+
+          <h6>2. Account Responsibilities</h6>
+          <p>You are responsible for maintaining the confidentiality of your account credentials and any activity under
+            your account.</p>
+
+          <h6>3. Intellectual Property</h6>
+          <p>All logos, product designs, content, and code are the intellectual property of Inspenox. You may not copy,
+            distribute, or reproduce them without permission.</p>
+
+          <h6>4. Prohibited Activities</h6>
+          <ul>
+            <li>Reverse engineering or unauthorized access to our systems</li>
+            <li>Using our services for fraudulent, harmful, or unlawful activities</li>
+            <li>Uploading viruses, malware, or scripts to disrupt functionality</li>
+          </ul>
+
+          <h6>5. Service Availability</h6>
+          <p>We strive to ensure uptime and security but offer no guarantees regarding uninterrupted access or
+            error-free operation.</p>
+
+          <h6>6. Termination</h6>
+          <p>We reserve the right to suspend or terminate your access without notice for any violation of these terms.
+          </p>
+
+          <h6>7. Changes to Terms</h6>
+          <p>Inspenox may update these Terms periodically. Continued use after changes implies acceptance of the updated
+            terms.</p>
+
+          <p class="mt-4">For legal inquiries, contact us at <a href="mailto:info@inspenox.in">info@inspenox.in</a>.
+          </p>
+        </div>
+        <div class="modal-footer border-0 bg-light">
+          <button type="button" class="btn btn-outline-dark btn-sm rounded-pill px-4"
+            data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Privacy Policy Modal -->
+  <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content border-0 shadow-sm rounded-4">
+        <div class="modal-header bg-dark text-white border-0">
+          <h5 class="modal-title" id="privacyModalLabel">Privacy Policy</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-start small" style="line-height: 1.7;">
+          <p><strong>Effective Date:</strong> July 31, 2025</p>
+          <p>Inspenox is committed to protecting your privacy and safeguarding your information. This Privacy Policy
+            explains how we collect, use, and protect your data.</p>
+
+          <h6>1. Information We Collect</h6>
+          <ul>
+            <li>Personal data (name, email, phone, etc.) submitted via forms</li>
+            <li>Usage data (pages visited, clicks, session duration)</li>
+            <li>Device and browser details for improving user experience</li>
+          </ul>
+
+          <h6>2. How We Use Your Data</h6>
+          <p>We use your information to provide services, respond to inquiries, improve functionality, send updates, and
+            for legal compliance.</p>
+
+          <h6>3. Data Sharing</h6>
+          <p>We do not sell or rent your data. Limited data may be shared with third-party tools (e.g., analytics or CRM
+            platforms) for service delivery and improvement.</p>
+
+          <h6>4. Security Measures</h6>
+          <p>We implement encryption, firewalls, and access controls to safeguard your information from unauthorized
+            access and breaches.</p>
+
+          <h6>5. Cookies & Tracking</h6>
+          <p>We use cookies to personalize your experience. You can opt-out via your browser settings.</p>
+
+          <h6>6. Data Retention</h6>
+          <p>We retain your information only as long as needed to fulfill the purposes stated in this policy.</p>
+
+          <h6>7. Your Rights</h6>
+          <ul>
+            <li>Request access to your personal data</li>
+            <li>Request correction or deletion</li>
+            <li>Withdraw consent for marketing communications</li>
+          </ul>
+
+          <h6>8. Updates to This Policy</h6>
+          <p>We may update this policy from time to time. Any changes will be reflected on this page with a revised
+            effective date.</p>
+
+          <p class="mt-4">For privacy-related concerns, email us at <a
+              href="mailto:info@inspenox.in">info@inspenox.in</a>.</p>
+        </div>
+        <div class="modal-footer border-0 bg-light">
+          <button type="button" class="btn btn-outline-dark btn-sm rounded-pill px-4"
+            data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+</body>
+
+</html>

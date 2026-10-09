@@ -1,0 +1,54 @@
+# =========================
+# Node & Dependencies
+# =========================
+node_modules/
+
+# =========================
+# Environment Variables
+# =========================
+.env
+.env.*
+
+# =========================
+# Logs
+# =========================
+*.log
+orders.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# IDE Files
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Build / Temp
+# =========================
+dist/
+build/
+.cache/
+
+# Local Netlify CLI cache directory (root level only)
+/.netlify
+
+# =========================
+# KEEP THESE (IMPORTANT)
+# =========================
+!netlify/
+!netlify/functions/
+!netlify/functions/*.js
+!functions/
+!functions/**
+!wrangler.toml
+!_redirects
+
+

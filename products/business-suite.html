@@ -1,0 +1,2996 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-bs-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>Inspenox Business Suite — The All-in-One Modular Business Platform</title>
+  <meta name="description"
+    content="Inspenox Business Suite is the complete modular enterprise platform for branch managers and business owners. Manage Business ERP with dual B2B & B2C billing, Enterprise CRM, Omnichannel Marketing, Hospital ERP (icare) with Pharmacy & Labs, and Corporate Asset DMS under a unified Custom Single Sign-On (SSO)." />
+  <link rel="canonical" href="https://inspenox.in/products/business-suite" />
+  <meta property="og:title" content="Inspenox Business Suite — The All-in-One Modular Business Platform" />
+  <meta property="og:description"
+    content="Equip your business with Business ERP, Enterprise CRM, WhatsApp & Email Marketing, Hospital Operations with Pharmacy & Labs, and 10 Corporate Asset DMS Vaults — all accessible with one master login via Custom SSO." />
+  <meta property="og:url" content="https://inspenox.in/products/business-suite" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="../assets/images/business_suite_mockup.png" />
+
+  <!-- Schema.org SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Inspenox Business Suite",
+    "applicationCategory": "BusinessApplication",
+    "operatingSystem": "Web, Cloud",
+    "description": "Inspenox Business Suite is the all-in-one modular business platform featuring Business ERP, Enterprise CRM, Omnichannel Marketing, Hospital ERP (icare), and Corporate Asset DMS with Custom Single Sign-On.",
+    "url": "https://inspenox.in/products/business-suite",
+    "creator": {
+      "@type": "Organization",
+      "name": "Inspenox Inc.",
+      "url": "https://inspenox.in"
+    }
+  }
+  </script>
+
+  <!-- Google Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet" />
+  <link rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-icon" />
+  <link rel="icon" href="../assets/images/favicon.png" type="image/x-icon" />
+
+  <style>
+    /* =============================================
+       DESIGN TOKENS & VARIABLES
+    ============================================= */
+    :root {
+      --cyan: #08d6ff;
+      --blue: #0072ff;
+      --indigo: #6366f1;
+      --purple: #a855f7;
+      --gold: #f59e0b;
+      --green: #10b981;
+      --rose: #f43f5e;
+
+      /* Dark Theme Default */
+      --bg-primary: #020810;
+      --bg-secondary: #060e1e;
+      --bg-card: rgba(255, 255, 255, 0.03);
+      --bg-card-hover: rgba(255, 255, 255, 0.06);
+      --bg-glass: rgba(6, 14, 30, 0.85);
+      --border: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(8, 214, 255, 0.3);
+      --text-primary: #f0f6ff;
+      --text-secondary: #8ba4c8;
+      --text-muted: #4a6080;
+      --nav-bg: rgba(2, 8, 16, 0.85);
+      --nav-scrolled: rgba(2, 8, 16, 0.98);
+      --shadow-glow: 0 0 50px rgba(8, 214, 255, 0.15);
+      --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.5);
+      --invert-logo: 0;
+
+      /* Module Accents */
+      --color-erp: var(--cyan);
+      --color-crm: var(--indigo);
+      --color-marketing: var(--green);
+      --color-hospital: var(--rose);
+      --color-dms: var(--gold);
+    }
+
+    /* Light Theme Crisp, High-Contrast & Modern */
+    [data-theme="light"] {
+      --cyan: #0072ff;
+      --blue: #0056cc;
+      --indigo: #4338ca;
+      --purple: #7e22ce;
+      --gold: #d97706;
+      --green: #059669;
+      --rose: #e11d48;
+
+      --bg-primary: #f8fafc;
+      --bg-secondary: #f1f5f9;
+      --bg-card: #ffffff;
+      --bg-card-hover: #ffffff;
+      --bg-glass: rgba(255, 255, 255, 0.94);
+      --border: #e2e8f0;
+      --border-glow: rgba(0, 114, 255, 0.25);
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --nav-bg: rgba(255, 255, 255, 0.92);
+      --nav-scrolled: rgba(255, 255, 255, 0.98);
+      --shadow-glow: 0 0 35px rgba(0, 114, 255, 0.1);
+      --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --invert-logo: 1;
+
+      --color-erp: #0284c7;
+      --color-crm: #4f46e5;
+      --color-marketing: #059669;
+      --color-hospital: #e11d48;
+      --color-dms: #d97706;
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+      overflow-x: hidden;
+      width: 100%;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 100vw;
+      transition: background 0.3s ease, color 0.3s ease;
+      word-wrap: break-word;
+      overflow-wrap: break-word;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Outfit', sans-serif;
+      font-weight: 700;
+      color: var(--text-primary);
+      line-height: 1.25;
+      word-break: break-word;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; }
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Gradient Text */
+    .gradient-text {
+      background: linear-gradient(135deg, var(--cyan) 0%, var(--blue) 50%, var(--purple) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    [data-theme="light"] .gradient-text {
+      background: linear-gradient(135deg, #0072ff 0%, #4338ca 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 13px 26px;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+      white-space: nowrap;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      color: #020810;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(8, 214, 255, 0.35);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 30px rgba(8, 214, 255, 0.5);
+      color: #000;
+    }
+    [data-theme="light"] .btn-primary {
+      background: linear-gradient(135deg, #0072ff, #0052cc);
+      color: #ffffff;
+      box-shadow: 0 4px 18px rgba(0, 114, 255, 0.28);
+    }
+    [data-theme="light"] .btn-primary:hover {
+      color: #ffffff;
+      box-shadow: 0 6px 24px rgba(0, 114, 255, 0.42);
+    }
+
+    .btn-outline {
+      background: var(--bg-card);
+      border-color: var(--border);
+      color: var(--text-primary);
+      backdrop-filter: blur(8px);
+    }
+    .btn-outline:hover {
+      border-color: var(--cyan);
+      background: var(--bg-card-hover);
+      transform: translateY(-2px);
+      color: var(--cyan);
+    }
+    [data-theme="light"] .btn-outline {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      color: #0f172a;
+    }
+    [data-theme="light"] .btn-outline:hover {
+      border-color: #0072ff;
+      background: #eff6ff;
+      color: #0072ff;
+    }
+    .btn-sm { padding: 9px 18px; font-size: 13px; border-radius: 9px; }
+
+    /* Badges */
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      background: rgba(8, 214, 255, 0.1);
+      border: 1px solid rgba(8, 214, 255, 0.25);
+      color: var(--cyan);
+    }
+    .badge-pill.gold {
+      background: rgba(245, 158, 11, 0.12);
+      border-color: rgba(245, 158, 11, 0.3);
+      color: var(--gold);
+    }
+    .badge-pill.green {
+      background: rgba(16, 185, 129, 0.12);
+      border-color: rgba(16, 185, 129, 0.3);
+      color: var(--green);
+    }
+    .badge-pill.purple {
+      background: rgba(168, 85, 247, 0.12);
+      border-color: rgba(168, 85, 247, 0.3);
+      color: var(--purple);
+    }
+
+    [data-theme="light"] .badge-pill {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: #1d4ed8;
+    }
+    [data-theme="light"] .badge-pill.gold {
+      background: #fffbeb;
+      border-color: #fde68a;
+      color: #b45309;
+    }
+    [data-theme="light"] .badge-pill.green {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      color: #047857;
+    }
+    [data-theme="light"] .badge-pill.purple {
+      background: #faf5ff;
+      border-color: #e9d5ff;
+      color: #7e22ce;
+    }
+
+    /* =============================================
+       NAVBAR (Exact index.html Styling & Animation)
+    ============================================= */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: var(--nav-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+      transition: all 0.35s ease;
+    }
+    #navbar.scrolled {
+      background: var(--nav-scrolled);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+    }
+    [data-theme="light"] #navbar.scrolled {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+    .nav-logo img {
+      height: 52px;
+      width: auto;
+      transition: height 0.3s ease;
+    }
+
+    #navbar.scrolled .nav-logo img 
+    {
+      height: 44px; 
+    }
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      padding: 8px 12px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+    .nav-links a:hover {
+      color: var(--cyan);
+      background: rgba(8, 214, 255, 0.06);
+    }
+    [data-theme="light"] .nav-links a {
+      color: #475569;
+    }
+    [data-theme="light"] .nav-links a:hover {
+      color: #0072ff;
+      background: rgba(0, 114, 255, 0.06);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .nav-cta {
+      display: none;
+      padding: 9px 18px;
+      font-size: 13px;
+    }
+
+    /* Theme Toggle Button */
+    .theme-btn {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      border: 1.5px solid var(--border);
+      background: var(--bg-card);
+      color: var(--text-primary);
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      font-size: 16px;
+      backdrop-filter: blur(12px);
+      transition: all 0.3s ease;
+      flex-shrink: 0;
+    }
+    .theme-btn:hover {
+      border-color: var(--cyan);
+      color: var(--cyan);
+      transform: rotate(20deg) scale(1.08);
+    }
+    [data-theme="light"] .theme-btn {
+      background: #ffffff;
+      border-color: #cbd5e1;
+      color: #0f172a;
+    }
+    [data-theme="light"] .theme-btn:hover {
+      border-color: #0072ff;
+      color: #0072ff;
+    }
+
+    /* Hamburger Button with 3 Animated Spans Morphing into 'X' */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 6px;
+      background: none;
+      border: none;
+      flex-shrink: 0;
+      z-index: 1001;
+      width: 36px;
+      height: 36px;
+      justify-content: center;
+      align-items: center;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2.5px;
+      background: var(--text-primary);
+      border-radius: 4px;
+      transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    [data-theme="light"] .hamburger span {
+      background: #0f172a;
+    }
+    .hamburger.open span:nth-child(1) {
+      transform: translateY(7.5px) rotate(45deg);
+    }
+    .hamburger.open span:nth-child(2) {
+      opacity: 0;
+      transform: scaleX(0);
+    }
+    .hamburger.open span:nth-child(3) {
+      transform: translateY(-7.5px) rotate(-45deg);
+    }
+
+    /* Mobile Slide-Down Menu */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      padding: 14px 16px 20px;
+      background: var(--nav-scrolled);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    }
+    [data-theme="light"] .mobile-menu {
+      background: rgba(255, 255, 255, 0.98);
+      border-top-color: #e2e8f0;
+      border-bottom-color: #e2e8f0;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+    }
+    .mobile-menu.open {
+      display: flex;
+      animation: slideDown 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .mobile-menu a {
+      color: var(--text-primary);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      padding: 12px 16px;
+      border-radius: 10px;
+      transition: all 0.2s;
+      border: 1px solid transparent;
+      display: block;
+    }
+    .mobile-menu a:hover,
+    .mobile-menu a:active {
+      background: rgba(8, 214, 255, 0.08);
+      border-color: rgba(8, 214, 255, 0.18);
+      color: var(--cyan);
+    }
+    [data-theme="light"] .mobile-menu a {
+      color: #0f172a;
+    }
+    [data-theme="light"] .mobile-menu a:hover,
+    [data-theme="light"] .mobile-menu a:active {
+      background: rgba(0, 114, 255, 0.08);
+      border-color: rgba(0, 114, 255, 0.18);
+      color: #0072ff;
+    }
+    .mobile-menu-cta {
+      margin-top: 8px;
+      padding-top: 8px;
+    }
+
+    /* Desktop View: min-width: 992px */
+    @media (min-width: 992px) {
+      .hamburger { display: none !important; }
+      .nav-links { display: flex !important; }
+      .nav-cta { display: inline-flex !important; }
+      .mobile-menu { display: none !important; }
+    }
+
+    /* =============================================
+       HERO SECTION
+    ============================================= */
+    .suite-hero {
+      position: relative;
+      padding: 140px 0 85px;
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(8, 214, 255, 0.12) 0%, transparent 70%),
+                  radial-gradient(ellipse 50% 40% at 80% 30%, rgba(99, 102, 241, 0.1) 0%, transparent 60%),
+                  var(--bg-primary);
+      overflow: hidden;
+    }
+    [data-theme="light"] .suite-hero {
+      background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(0, 114, 255, 0.07) 0%, transparent 70%),
+                  radial-gradient(ellipse 50% 40% at 80% 30%, rgba(79, 70, 229, 0.05) 0%, transparent 60%),
+                  #f8fafc;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-text .badge-pill { margin-bottom: 20px; }
+    .hero-text h1 {
+      font-size: clamp(26px, 4.5vw, 48px);
+      font-weight: 800;
+      margin-bottom: 20px;
+      letter-spacing: -0.5px;
+    }
+    .hero-text p.lead {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 30px;
+      line-height: 1.8;
+    }
+    .hero-cta-group {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-bottom: 36px;
+    }
+    .hero-stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-box h4 {
+      font-size: 24px;
+      color: var(--cyan);
+      font-weight: 800;
+      margin-bottom: 2px;
+    }
+    [data-theme="light"] .stat-box h4 {
+      color: #0072ff;
+    }
+    .stat-box span {
+      font-size: 11.5px;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Hero Mockup Visual */
+    .hero-mockup-wrapper {
+      position: relative;
+      width: 100%;
+    }
+    .hero-mockup-card {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-card), 0 0 40px rgba(8, 214, 255, 0.12);
+      background: var(--bg-card);
+      transition: transform 0.4s ease, border-color 0.4s ease;
+    }
+    .hero-mockup-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-glow);
+    }
+    [data-theme="light"] .hero-mockup-card {
+      background: #ffffff;
+      border-color: #e2e8f0;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+    }
+    .hero-mockup-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Floating Badges */
+    .floating-badge {
+      position: absolute;
+      background: var(--bg-glass);
+      backdrop-filter: blur(16px);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+      z-index: 2;
+      animation: float 4s ease-in-out infinite alternate;
+    }
+    [data-theme="light"] .floating-badge {
+      background: rgba(255, 255, 255, 0.96);
+      border: 1.5px solid #e2e8f0;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      color: #0f172a;
+    }
+    .floating-badge.top-left { top: -16px; left: -16px; }
+    .floating-badge.bottom-right { bottom: -16px; right: -16px; animation-delay: 2s; }
+    .fb-icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      100% { transform: translateY(-8px); }
+    }
+
+    /* =============================================
+       SECTION HEADERS
+    ============================================= */
+    .section-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 50px;
+    }
+    .section-header .badge-pill { margin-bottom: 14px; }
+    .section-header h2 {
+      font-size: clamp(24px, 4vw, 38px);
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+    .section-header p {
+      font-size: 15.5px;
+      color: var(--text-secondary);
+    }
+    section.py-100 { padding: 90px 0; }
+
+    /* =============================================
+       CUSTOM SSO & APP SWITCHER SHOWCASE
+    ============================================= */
+    .sso-section {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    [data-theme="light"] .sso-section {
+      background: #f1f5f9;
+      border-color: #e2e8f0;
+    }
+    .sso-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .sso-heading {
+      font-size: clamp(20px, 3.5vw, 34px);
+      margin: 16px 0;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    .sso-feature-list {
+      list-style: none;
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+    .sso-feature-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .sso-feature-item i {
+      font-size: 22px;
+      color: var(--cyan);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    [data-theme="light"] .sso-feature-item i {
+      color: #0072ff;
+    }
+    .sso-feature-item h5 {
+      font-size: 16px;
+      margin-bottom: 4px;
+      color: var(--text-primary);
+    }
+    .sso-feature-item p {
+      font-size: 14px;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    /* Interactive SSO Mockup Widget */
+    .sso-widget {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      position: relative;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    [data-theme="light"] .sso-widget {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.05);
+    }
+    .sso-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 18px;
+      width: 100%;
+      gap: 10px;
+    }
+    [data-theme="light"] .sso-top-bar {
+      border-bottom-color: #e2e8f0;
+    }
+    .sso-user-info {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      word-break: break-all;
+      overflow-wrap: anywhere;
+      min-width: 0;
+    }
+    [data-theme="light"] .sso-user-info strong {
+      color: #0f172a;
+    }
+    .sso-user-avatar {
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--cyan), var(--blue));
+      color: #000;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+    [data-theme="light"] .sso-user-avatar {
+      background: linear-gradient(135deg, #0072ff, #00c6ff);
+      color: #ffffff;
+    }
+
+    .app-switcher-bar {
+      display: flex;
+      gap: 8px;
+      background: rgba(0, 0, 0, 0.28);
+      padding: 6px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 18px;
+      scrollbar-width: none;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      flex-wrap: nowrap;
+    }
+    .app-switcher-bar::-webkit-scrollbar { display: none; }
+
+    [data-theme="light"] .app-switcher-bar {
+      background: #f1f5f9 !important;
+      border: 1.5px solid #e2e8f0 !important;
+    }
+    .app-btn {
+      flex: 0 0 auto;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      background: transparent;
+      color: var(--text-secondary);
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+    .app-btn:hover { color: var(--text-primary); }
+    .app-btn.active {
+      background: var(--cyan);
+      color: #020810;
+      font-weight: 700;
+      border-color: var(--cyan);
+      box-shadow: 0 2px 10px rgba(8, 214, 255, 0.3);
+    }
+    [data-theme="light"] .app-btn {
+      color: #475569;
+    }
+    [data-theme="light"] .app-btn:hover {
+      color: #0f172a;
+      background: #e2e8f0;
+    }
+    [data-theme="light"] .app-btn.active {
+      background: #0072ff !important;
+      color: #ffffff !important;
+      border-color: #0072ff !important;
+      box-shadow: 0 3px 12px rgba(0, 114, 255, 0.28) !important;
+    }
+
+    .sso-screen-preview {
+      background: rgba(0, 0, 0, 0.28);
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      padding: 22px;
+      min-height: 180px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      transition: all 0.3s ease;
+      width: 100%;
+      max-width: 100%;
+      box-sizing: border-box;
+      word-break: break-word;
+      overflow-wrap: break-word;
+    }
+    [data-theme="light"] .sso-screen-preview {
+      background: #ffffff !important;
+      border: 1.5px solid #e2e8f0 !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03) !important;
+    }
+    .sso-screen-preview h4 {
+      font-size: 17px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      word-break: break-word;
+    }
+    [data-theme="light"] .sso-screen-preview h4 {
+      color: #0f172a !important;
+    }
+    .sso-screen-preview p {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+    [data-theme="light"] .sso-screen-preview p {
+      color: #475569 !important;
+    }
+    .sso-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .sso-pill {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 6px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-primary);
+    }
+    [data-theme="light"] .sso-pill {
+      background: #f8fafc !important;
+      border: 1px solid #cbd5e1 !important;
+      color: #1e293b !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    /* =============================================
+       MODULE SELECTOR & SUBSCRIPTION CALCULATOR
+    ============================================= */
+    .calc-section {
+      background: var(--bg-primary);
+      position: relative;
+    }
+    [data-theme="light"] .calc-section {
+      background: #f8fafc;
+    }
+    .calc-container {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow-card);
+    }
+    [data-theme="light"] .calc-container {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 36px;
+    }
+    .module-choice-card {
+      background: rgba(255, 255, 255, 0.02);
+      border: 1.5px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+      cursor: pointer;
+      transition: all 0.25s ease;
+    }
+    .module-choice-card:hover {
+      border-color: var(--border-glow);
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .module-choice-card.selected {
+      border-color: var(--cyan);
+      background: rgba(8, 214, 255, 0.05);
+      box-shadow: 0 0 20px rgba(8, 214, 255, 0.1);
+    }
+    [data-theme="light"] .module-choice-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+    }
+    [data-theme="light"] .module-choice-card:hover {
+      border-color: #93c5fd;
+      background: #f8fafc;
+    }
+    [data-theme="light"] .module-choice-card.selected {
+      background: #f0f7ff;
+      border-color: #0072ff;
+      box-shadow: 0 4px 16px rgba(0, 114, 255, 0.08);
+    }
+
+    .choice-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+    .choice-icon {
+      width: 42px; height: 42px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+    }
+    .choice-title {
+      font-size: 15.5px;
+      font-weight: 700;
+      margin-bottom: 2px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .choice-title a {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--cyan);
+      text-decoration: underline;
+    }
+    [data-theme="light"] .choice-title {
+      color: #0f172a;
+    }
+    [data-theme="light"] .choice-title a {
+      color: #0072ff;
+    }
+    .choice-desc {
+      font-size: 12.5px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    [data-theme="light"] .choice-desc {
+      color: #64748b;
+    }
+    .custom-checkbox {
+      width: 24px; height: 24px;
+      border-radius: 6px;
+      border: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      color: transparent;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+      margin-left: 10px;
+    }
+    .module-choice-card.selected .custom-checkbox {
+      background: var(--cyan);
+      border-color: var(--cyan);
+      color: #020810;
+    }
+    [data-theme="light"] .custom-checkbox {
+      border: 2px solid #cbd5e1;
+      background: #ffffff;
+    }
+    [data-theme="light"] .module-choice-card.selected .custom-checkbox {
+      background: #0072ff;
+      border-color: #0072ff;
+      color: #ffffff;
+    }
+
+    /* Summary Card */
+    .calc-summary-card {
+      background: var(--bg-secondary);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    [data-theme="light"] .calc-summary-card {
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+    }
+    .summary-title {
+      font-size: 19px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    [data-theme="light"] .summary-title {
+      color: #0f172a;
+    }
+    .selected-items-list {
+      list-style: none;
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .selected-item-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      padding-bottom: 8px;
+      border-bottom: 1px dashed var(--border);
+    }
+    [data-theme="light"] .selected-item-row {
+      border-bottom-color: #e2e8f0;
+      color: #334155;
+    }
+    [data-theme="light"] .selected-item-row strong {
+      color: #0072ff;
+    }
+
+    .summary-total-box {
+      background: rgba(0, 0, 0, 0.3);
+      border-radius: 14px;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      border: 1px solid var(--border);
+    }
+    [data-theme="light"] .summary-total-box {
+      background: linear-gradient(135deg, #eff6ff 0%, #e0e7ff 100%) !important;
+      border: 1.5px solid #bfdbfe !important;
+      box-shadow: 0 4px 15px rgba(0, 114, 255, 0.08) !important;
+    }
+    .summary-total-box span {
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      font-weight: 600;
+    }
+    [data-theme="light"] .summary-total-box span {
+      color: #1e40af !important;
+      font-weight: 700;
+    }
+    .summary-total-box h3 {
+      font-size: 30px;
+      color: var(--cyan);
+      margin-top: 4px;
+      font-weight: 800;
+    }
+    [data-theme="light"] .summary-total-box h3 {
+      color: #1d4ed8 !important;
+      font-weight: 800;
+    }
+
+    /* =============================================
+       MODULES DEEP DIVE SECTION (TABS)
+    ============================================= */
+    .modules-section {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+    }
+    [data-theme="light"] .modules-section {
+      background: #f1f5f9;
+      border-color: #e2e8f0;
+    }
+    .module-nav-tabs {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+    }
+    .mod-tab-btn {
+      padding: 11px 20px;
+      border-radius: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.25s ease;
+      white-space: nowrap;
+    }
+    .mod-tab-btn:hover {
+      border-color: var(--cyan);
+      color: var(--text-primary);
+    }
+    .mod-tab-btn.active {
+      background: linear-gradient(135deg, rgba(8, 214, 255, 0.15), rgba(0, 114, 255, 0.15));
+      border-color: var(--cyan);
+      color: var(--cyan);
+      box-shadow: 0 4px 20px rgba(8, 214, 255, 0.15);
+    }
+    [data-theme="light"] .mod-tab-btn {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      color: #475569;
+    }
+    [data-theme="light"] .mod-tab-btn:hover {
+      border-color: #93c5fd;
+      color: #0072ff;
+      background: #eff6ff;
+    }
+    [data-theme="light"] .mod-tab-btn.active {
+      background: #0072ff !important;
+      border-color: #0072ff !important;
+      color: #ffffff !important;
+      box-shadow: 0 4px 14px rgba(0, 114, 255, 0.25) !important;
+    }
+
+    /* Module Tab Panes */
+    .mod-tab-pane {
+      display: none;
+      animation: fadeIn 0.4s ease;
+    }
+    .mod-tab-pane.active { display: block; }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .module-hero-banner {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
+      margin-bottom: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    [data-theme="light"] .module-hero-banner {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+    .module-hero-banner h3 {
+      font-size: clamp(20px, 3.5vw, 28px);
+      margin-bottom: 8px;
+    }
+    [data-theme="light"] .module-hero-banner h3 {
+      color: #0f172a;
+    }
+    .module-hero-banner p {
+      font-size: 14.5px;
+      color: var(--text-secondary);
+      max-width: 750px;
+      margin: 0;
+    }
+    [data-theme="light"] .module-hero-banner p {
+      color: #475569;
+    }
+
+    .features-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 26px;
+    }
+    .features-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-bottom: 26px;
+    }
+    .feat-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .feat-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-glow);
+      box-shadow: var(--shadow-card);
+    }
+    [data-theme="light"] .feat-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    }
+    [data-theme="light"] .feat-card:hover {
+      border-color: #93c5fd;
+      box-shadow: 0 8px 30px rgba(0, 114, 255, 0.08);
+    }
+
+    .feat-card-icon {
+      width: 42px; height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
+      margin-bottom: 14px;
+      flex-shrink: 0;
+    }
+    .feat-card h4 {
+      font-size: 17px;
+      margin-bottom: 8px;
+    }
+    [data-theme="light"] .feat-card h4 {
+      color: #0f172a;
+    }
+    .feat-card p {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      margin-bottom: 14px;
+      flex-grow: 1;
+    }
+    [data-theme="light"] .feat-card p {
+      color: #475569;
+    }
+    .feat-card ul {
+      list-style: none;
+      font-size: 13px;
+      color: var(--text-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    [data-theme="light"] .feat-card ul {
+      color: #334155;
+    }
+    .feat-card ul li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+    .feat-card ul li i {
+      color: var(--cyan);
+      font-size: 14px;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+    [data-theme="light"] .feat-card ul li i {
+      color: #0072ff;
+    }
+
+    /* Dual Billing Highlight Box */
+    .dual-billing-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 26px;
+    }
+    .billing-mode-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+      position: relative;
+    }
+    .billing-mode-card.b2b { border-left: 4px solid var(--cyan); }
+    .billing-mode-card.b2c { border-left: 4px solid var(--gold); }
+    [data-theme="light"] .billing-mode-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+    }
+    [data-theme="light"] .billing-mode-card.b2b { border-left: 4px solid #0072ff; }
+    [data-theme="light"] .billing-mode-card.b2c { border-left: 4px solid #d97706; }
+
+    .billing-mode-card h4 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    [data-theme="light"] .billing-mode-card h4 {
+      color: #0f172a;
+    }
+    .billing-mode-card p {
+      font-size: 13.5px;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+    }
+    [data-theme="light"] .billing-mode-card p {
+      color: #475569;
+    }
+
+    /* DMS Vaults 10-Grid */
+    .vaults-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-bottom: 26px;
+    }
+    .vault-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 16px 12px;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+    .vault-box:hover {
+      border-color: var(--cyan);
+      transform: translateY(-3px);
+    }
+    [data-theme="light"] .vault-box {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+    }
+    [data-theme="light"] .vault-box:hover {
+      border-color: #0072ff;
+    }
+    .vault-box i {
+      font-size: 24px;
+      color: var(--cyan);
+      margin-bottom: 6px;
+      display: inline-block;
+    }
+    [data-theme="light"] .vault-box i {
+      color: #0072ff;
+    }
+    .vault-box h5 {
+      font-size: 13.5px;
+      margin-bottom: 3px;
+    }
+    [data-theme="light"] .vault-box h5 {
+      color: #0f172a;
+    }
+    .vault-box span {
+      font-size: 11px;
+      color: var(--text-muted);
+      line-height: 1.3;
+      display: block;
+    }
+    [data-theme="light"] .vault-box span {
+      color: #64748b;
+    }
+
+    /* =============================================
+       TARGET INDUSTRIES
+    ============================================= */
+    .industries-section {
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border);
+    }
+    [data-theme="light"] .industries-section {
+      background: #f8fafc;
+      border-color: #e2e8f0;
+    }
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+    .ind-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px 18px;
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .ind-card:hover {
+      border-color: var(--cyan);
+      transform: translateY(-4px);
+    }
+    [data-theme="light"] .ind-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+    }
+    [data-theme="light"] .ind-card:hover {
+      border-color: #0072ff;
+      box-shadow: 0 6px 24px rgba(0, 114, 255, 0.08);
+    }
+    .ind-card i {
+      font-size: 30px;
+      color: var(--cyan);
+      margin-bottom: 12px;
+      display: inline-block;
+    }
+    [data-theme="light"] .ind-card i {
+      color: #0072ff;
+    }
+    .ind-card h4 {
+      font-size: 16.5px;
+      margin-bottom: 6px;
+    }
+    [data-theme="light"] .ind-card h4 {
+      color: #0f172a;
+    }
+    .ind-card p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+    [data-theme="light"] .ind-card p {
+      color: #475569;
+    }
+
+    /* =============================================
+       FAQ ACCORDION
+    ============================================= */
+    .faq-section {
+      background: var(--bg-secondary);
+      border-top: 1px solid var(--border);
+    }
+    [data-theme="light"] .faq-section {
+      background: #f1f5f9;
+      border-color: #e2e8f0;
+    }
+    .faq-container {
+      max-width: 840px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+      transition: border-color 0.25s ease;
+    }
+    .faq-item:hover { border-color: var(--border-glow); }
+    [data-theme="light"] .faq-item {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+    }
+    [data-theme="light"] .faq-item:hover {
+      border-color: #93c5fd;
+    }
+    .faq-question {
+      padding: 18px 22px;
+      font-size: 15.5px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      color: var(--text-primary);
+      gap: 12px;
+    }
+    [data-theme="light"] .faq-question {
+      color: #0f172a;
+    }
+    .faq-question i {
+      font-size: 16px;
+      color: var(--cyan);
+      transition: transform 0.3s ease;
+      flex-shrink: 0;
+    }
+    [data-theme="light"] .faq-question i {
+      color: #0072ff;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease;
+      padding: 0 22px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+    [data-theme="light"] .faq-answer {
+      color: #475569;
+    }
+    .faq-item.open .faq-question i {
+      transform: rotate(180deg);
+    }
+    .faq-item.open .faq-answer {
+      max-height: 380px;
+      padding: 0 22px 18px;
+    }
+
+    /* =============================================
+       INQUIRY / REGISTRATION SECTION
+    ============================================= */
+    .contact-section {
+      background: var(--bg-primary);
+      border-top: 1px solid var(--border);
+      position: relative;
+    }
+    [data-theme="light"] .contact-section {
+      background: #f8fafc;
+      border-color: #e2e8f0;
+    }
+    .form-wrapper {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 36px;
+      box-shadow: var(--shadow-card);
+    }
+    [data-theme="light"] .form-wrapper {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    }
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .form-group {
+      margin-bottom: 18px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 6px;
+      color: var(--text-primary);
+    }
+    [data-theme="light"] .form-group label {
+      color: #0f172a;
+    }
+    .form-control {
+      width: 100%;
+      background: rgba(0, 0, 0, 0.25);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      font-size: 14px;
+      color: var(--text-primary);
+      font-family: inherit;
+      outline: none;
+      transition: all 0.25s ease;
+      box-sizing: border-box;
+      min-width: 0;
+    }
+    .form-control:focus {
+      border-color: var(--cyan);
+      box-shadow: 0 0 12px rgba(8, 214, 255, 0.15);
+    }
+    [data-theme="light"] .form-control {
+      background-color: #ffffff !important;
+      border: 1.5px solid #cbd5e1 !important;
+      color: #0f172a !important;
+    }
+    [data-theme="light"] .form-control::placeholder {
+      color: #94a3b8 !important;
+    }
+    [data-theme="light"] .form-control:focus {
+      background-color: #ffffff !important;
+      border-color: #0072ff !important;
+      box-shadow: 0 0 0 4px rgba(0, 114, 255, 0.12) !important;
+      color: #0f172a !important;
+    }
+    [data-theme="light"] select.form-control,
+    [data-theme="light"] select.form-control option {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+    }
+    [data-theme="light"] textarea.form-control {
+      background-color: #ffffff !important;
+      color: #0f172a !important;
+    }
+    textarea.form-control { resize: vertical; }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    footer {
+      background: #010409;
+      border-top: 1px solid var(--border);
+      padding: 45px 0 25px;
+      color: var(--text-muted);
+      font-size: 13.5px;
+    }
+    [data-theme="light"] footer {
+      background: #f1f5f9;
+      border-top-color: #e2e8f0;
+      color: #64748b;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 18px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    [data-theme="light"] .footer-inner {
+      border-bottom-color: #e2e8f0;
+    }
+    .footer-logo img {
+      height: 38px;
+      width: auto;
+      filter: invert(var(--invert-logo));
+    }
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+    .footer-links a:hover { color: var(--cyan); }
+    [data-theme="light"] .footer-links a {
+      color: #475569;
+    }
+    [data-theme="light"] .footer-links a:hover { color: #0072ff; }
+    .footer-bottom {
+      padding-top: 20px;
+      text-align: center;
+      font-size: 12.5px;
+    }
+
+    /* =============================================
+       RESPONSIVE BREAKPOINTS (DOWN TO <= 320PX)
+    ============================================= */
+    @media (max-width: 1024px) {
+      .hero-grid, .sso-grid, .calc-grid, .features-grid-3, .dual-billing-box {
+        grid-template-columns: 1fr;
+      }
+      .features-grid-2 { grid-template-columns: 1fr; }
+      .industries-grid { grid-template-columns: repeat(2, 1fr); }
+      .vaults-grid { grid-template-columns: repeat(3, 1fr); }
+      .floating-badge { display: none; }
+      .hero-stats-bar { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-actions .nav-cta { display: none !important; }
+      .hamburger { display: flex !important; }
+      .hero-text h1 { font-size: clamp(24px, 7vw, 36px); }
+      .section-header h2 { font-size: 26px; }
+      .form-row { grid-template-columns: 1fr; gap: 14px; }
+      .vaults-grid { grid-template-columns: repeat(2, 1fr); }
+      .calc-container, .form-wrapper { padding: 22px 16px; }
+      .module-hero-banner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+        padding: 22px 16px;
+      }
+      .module-nav-tabs {
+        justify-content: flex-start;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        padding-bottom: 10px;
+        flex-wrap: nowrap;
+        scrollbar-width: none;
+      }
+      .module-nav-tabs::-webkit-scrollbar { display: none; }
+      .mod-tab-btn { flex-shrink: 0; font-size: 13px; padding: 10px 16px; }
+      .hero-cta-group {
+        flex-direction: column;
+        width: 100%;
+      }
+      .hero-cta-group .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 14px; }
+      .nav-inner { height: 68px; }
+      .nav-logo img { height: 38px; }
+      .suite-hero { padding: 105px 0 45px; }
+      .hero-stats-bar { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+      .stat-box h4 { font-size: 20px; }
+      .stat-box span { font-size: 11px; }
+      .calc-container, .form-wrapper, .sso-widget { padding: 16px 14px; border-radius: 16px; }
+      .module-choice-card { padding: 14px 12px; }
+      .choice-left { gap: 10px; }
+      .choice-icon { width: 36px; height: 36px; font-size: 18px; }
+      .choice-title { font-size: 14px; }
+      .choice-desc { font-size: 11.5px; }
+      .industries-grid { grid-template-columns: 1fr; }
+      .sso-top-bar { flex-direction: column; align-items: flex-start; gap: 8px; }
+      .sso-screen-preview { padding: 16px 12px; min-height: auto; }
+      .sso-screen-preview h4 { font-size: 16px; }
+      .sso-screen-preview p { font-size: 12px; }
+      .sso-pill { font-size: 10.5px; padding: 3px 8px; }
+      .app-switcher-bar {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        flex-wrap: nowrap;
+      }
+      .app-switcher-bar::-webkit-scrollbar { display: none; }
+      .app-btn { font-size: 11px; padding: 6px 10px; flex-shrink: 0; }
+      .feat-card { padding: 18px 14px; }
+      .billing-mode-card { padding: 18px 14px; }
+    }
+
+    /* Ultra-small screens down to 320px and below (e.g. 280px-320px) */
+    @media (max-width: 340px) {
+      .container { padding: 0 8px; }
+      .nav-inner { height: 60px; }
+      .nav-logo img { height: 32px; max-width: 120px; }
+      .theme-btn { width: 32px; height: 32px; font-size: 13px; }
+      .hamburger { width: 32px; height: 32px; padding: 3px; }
+      .hamburger span { width: 20px; height: 2px; }
+      .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+      .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+      .hero-text h1 { font-size: clamp(20px, 6vw, 24px); line-height: 1.25; }
+      .hero-text p.lead { font-size: 13px; line-height: 1.6; }
+      .badge-pill { font-size: 10.5px; padding: 4px 10px; white-space: normal; text-align: center; }
+      .hero-stats-bar { grid-template-columns: 1fr; gap: 8px; }
+      .stat-box { text-align: center; }
+
+      .sso-heading { font-size: 19px; line-height: 1.3; }
+      .calc-container, .form-wrapper, .sso-widget { padding: 14px 8px; border-radius: 12px; width: 100%; max-width: 100%; box-sizing: border-box; }
+      .sso-top-bar { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .sso-user-info { font-size: 11.5px; }
+      .sso-user-info strong { word-break: break-all; }
+      .sso-screen-preview { padding: 12px 8px; }
+      .sso-screen-preview h4 { font-size: 14px; }
+      .sso-screen-preview p { font-size: 11.5px; }
+      .sso-pill { font-size: 9.5px; padding: 2px 6px; }
+
+      .module-choice-card { padding: 10px 8px; }
+      .choice-icon { display: none; }
+      .choice-title { font-size: 13px; }
+      .choice-desc { font-size: 10.5px; line-height: 1.35; }
+      .custom-checkbox { width: 18px; height: 18px; font-size: 11px; margin-left: 6px; }
+      .calc-summary-card { padding: 14px 8px; }
+      .summary-title { font-size: 15px; }
+      .selected-item-row { font-size: 11px; }
+      .summary-total-box { padding: 12px 8px; }
+      .summary-total-box h3 { font-size: 20px; }
+
+      .module-hero-banner { padding: 14px 8px; }
+      .module-hero-banner h3 { font-size: 16px; }
+      .module-hero-banner p { font-size: 11.5px; }
+      .mod-tab-btn { padding: 7px 10px; font-size: 11px; }
+      .feat-card { padding: 14px 8px; }
+      .feat-card h4 { font-size: 14px; }
+      .feat-card p { font-size: 11.5px; }
+      .feat-card ul li { font-size: 11px; }
+      .billing-mode-card { padding: 14px 8px; }
+      .vaults-grid { grid-template-columns: 1fr; gap: 8px; }
+      .vault-box { padding: 10px 6px; }
+      .ind-card { padding: 14px 8px; }
+      .faq-question { padding: 12px 8px; font-size: 13px; }
+      .faq-answer { padding: 0 8px 12px; font-size: 12px; }
+
+      .form-wrapper { padding: 14px 8px; }
+      .form-control { padding: 9px 10px; font-size: 12.5px; }
+      .btn { padding: 10px 14px; font-size: 13px; white-space: normal; text-align: center; }
+      button[type="submit"].btn-primary { font-size: 13px; padding: 12px 10px; }
+
+      .footer-links { gap: 10px; font-size: 11.5px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =============================================
+       NAVBAR (Identical to index.html with Animated 'X')
+  ============================================= -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="../index.html" class="nav-logo" id="navLogoLink">
+          <img id="siteLogo" src="../assets/images/dark11.png" data-dark="../assets/images/dark11.png" data-light="../assets/images/light11.png" alt="Inspenox Logo" />
+        </a>
+
+        <!-- Desktop Navigation -->
+        <ul class="nav-links" id="desktopNav">
+          <li><a href="../index.html"><i class="bi bi-house-door"></i> Home</a></li>
+          <li><a href="#sso">Custom SSO</a></li>
+          <li><a href="#calculator">Modular Plans</a></li>
+          <li><a href="#modules">Modules</a></li>
+          <li><a href="#industries">Industries</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <!-- Theme Toggle Button -->
+          <button class="theme-btn" id="themeToggle" onclick="toggleTheme()" aria-label="Toggle Theme">
+            <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+          </button>
+
+          <!-- Desktop CTA -->
+          <a href="#demo" class="btn btn-primary nav-cta">Register / Demo</a>
+
+          <!-- Hamburger Button with 3 Animated Spans -->
+          <button class="hamburger" id="hamburger" aria-label="Toggle mobile menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile Slide-Down Menu (Matching index.html) -->
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="../index.html" style="color:var(--cyan); font-weight:700;"><i class="bi bi-arrow-left-circle-fill" style="margin-right:6px;"></i> Inspenox Home</a>
+      <a href="#sso">Custom SSO</a>
+      <a href="#calculator">Modular Plans</a>
+      <a href="#modules">Modules</a>
+      <a href="#industries">Industries</a>
+      <a href="#faq">FAQ</a>
+      <div class="mobile-menu-cta">
+        <a href="#demo" class="btn btn-primary" style="width:100%; justify-content:center;">Register / Demo</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =============================================
+       HERO SECTION
+  ============================================= -->
+  <section class="suite-hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div style="display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px;">
+            <div class="badge-pill gold">
+              <i class="bi bi-stars"></i> The All-in-One Modular Business Platform
+            </div>
+            <div class="badge-pill purple" style="background:rgba(168,85,247,0.15); color:#a855f7; border-color:rgba(168,85,247,0.3);">
+              <i class="bi bi-robot"></i> AI-Powered for Seamless Work
+            </div>
+          </div>
+          <h1>
+            One Unified Platform to Run Your <br />
+            <span class="gradient-text">Entire Business</span>
+          </h1>
+          <p class="lead">
+            Equip your branch managers and enterprise teams with AI-powered, purpose-built business modules: 
+            <strong>Business ERP</strong> (Dual B2B & B2C Billing), <strong>Enterprise CRM</strong>, 
+            <strong>Omnichannel Marketing</strong>, <strong>Hospital ERP (icare)</strong> with Pharmacy & Labs, 
+            and <strong>Corporate Asset DMS</strong>. Select only the modules you need, subscribe, and access everything seamlessly via 
+            <strong>Custom Single Sign-On (SSO)</strong> with one master login.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#calculator" class="btn btn-primary">
+              <i class="bi bi-sliders"></i> Configure Your Suite
+            </a>
+            <a href="#modules" class="btn btn-outline">
+              <i class="bi bi-grid-3x3-gap-fill"></i> Explore Modules
+            </a>
+          </div>
+
+          <div class="hero-stats-bar">
+            <div class="stat-box">
+              <h4>Modular</h4>
+              <span>Engines</span>
+            </div>
+            <div class="stat-box">
+              <h4>1 Master</h4>
+              <span>SSO Login</span>
+            </div>
+            <div class="stat-box">
+              <h4>B2B + B2C</h4>
+              <span>Dual POS Billing</span>
+            </div>
+            <div class="stat-box">
+              <h4>99.9%</h4>
+              <span>Uptime SLA</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Mockup Visual -->
+        <div class="hero-mockup-wrapper">
+          <div class="floating-badge top-left">
+            <div class="fb-icon" style="background:rgba(8,214,255,0.15); color:var(--cyan);">
+              <i class="bi bi-shield-lock-fill"></i>
+            </div>
+            <div>
+              <div style="font-size:11px; color:var(--text-muted); font-weight:600;">CUSTOM SSO ACTIVE</div>
+              <div style="font-size:13px; font-weight:700;">1 Master Login Credential</div>
+            </div>
+          </div>
+
+          <div class="hero-mockup-card">
+            <img src="../assets/images/business_suite_mockup.png" alt="Inspenox Business Suite Dashboard" />
+          </div>
+
+          <div class="floating-badge bottom-right">
+            <div class="fb-icon" style="background:rgba(16,185,129,0.15); color:var(--green);">
+              <i class="bi bi-receipt"></i>
+            </div>
+            <div>
+              <div style="font-size:11px; color:var(--text-muted); font-weight:600;">DUAL GST POS ENGINE</div>
+              <div style="font-size:13px; font-weight:700;">Corporate B2B & Retail B2C</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       CUSTOM SSO & APP SWITCHER SECTION
+  ============================================= -->
+  <section id="sso" class="sso-section py-100">
+    <div class="container">
+      <div class="sso-grid">
+        <div>
+          <div class="badge-pill purple">
+            <i class="bi bi-key-fill"></i> Zero Credential Fatigue
+          </div>
+          <h2 class="sso-heading">
+            Inspenox Custom SSO: <br />
+            <span class="gradient-text">1 Master Login for All Your Businesses</span>
+          </h2>
+          <p style="color:var(--text-secondary); font-size:15px; margin-bottom:20px; line-height: 1.7;">
+            Stop juggling multiple usernames, passwords, and disparate URLs for different stores or applications. 
+            With <strong>Inspenox Custom Single Sign-On (SSO)</strong>, you and your branch managers log in once 
+            and instantly hop between ERP, CRM, Marketing, Hospital, and Asset Document vaults with a single click.
+          </p>
+
+          <ul class="sso-feature-list">
+            <li class="sso-feature-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <h5>1-Click Cross-Module App Switcher</h5>
+                <p>Switch between Business ERP, B2B CRM, WhatsApp Broadcasts, Hospital EMR, and Asset DMS from a universal top navigation bar without logging in again.</p>
+              </div>
+            </li>
+            <li class="sso-feature-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <h5>Unified Subscription Management</h5>
+                <p>Manage and renew module subscriptions from one central client profile. Add new modules anytime as your business expands.</p>
+              </div>
+            </li>
+            <li class="sso-feature-item">
+              <i class="bi bi-check-circle-fill"></i>
+              <div>
+                <h5>Turnkey Backend Activation</h5>
+                <p>When you subscribe, our engineering team activates the exact features, branch quotas, and roles you need behind the scenes — 100% plug-and-play.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Interactive SSO Widget Preview -->
+        <div class="sso-widget">
+          <div class="sso-top-bar">
+            <div class="sso-user-info">
+              <div class="sso-user-avatar">BM</div>
+              <div>
+                <strong style="color:var(--text-primary);">Branch Manager</strong> (manager@company.in)
+              </div>
+            </div>
+            <span class="badge-pill green" style="font-size:10px; padding:3px 10px;">
+              <i class="bi bi-check2"></i> SSO Active
+            </span>
+          </div>
+
+          <!-- Interactive Module Switcher Buttons -->
+          <div class="app-switcher-bar" id="ssoSwitcherBar">
+            <button class="app-btn active" onclick="switchSSODemo('erp', this)">
+              <i class="bi bi-building"></i> ERP
+            </button>
+            <button class="app-btn" onclick="switchSSODemo('crm', this)">
+              <i class="bi bi-person-lines-fill"></i> CRM
+            </button>
+            <button class="app-btn" onclick="switchSSODemo('marketing', this)">
+              <i class="bi bi-whatsapp"></i> Marketing
+            </button>
+            <button class="app-btn" onclick="switchSSODemo('hospital', this)">
+              <i class="bi bi-hospital"></i> Hospital
+            </button>
+            <button class="app-btn" onclick="switchSSODemo('dms', this)">
+              <i class="bi bi-folder-check"></i> DMS
+            </button>
+          </div>
+
+          <!-- Screen Preview Area -->
+          <div class="sso-screen-preview" id="ssoPreviewBox">
+            <h4><i class="bi bi-building" style="color:var(--color-erp);"></i> Business ERP Workspace</h4>
+            <p>Active Branch: Main Store Location | Dual B2B & B2C Billing active with real-time stock sync & automated payroll deduction engine.</p>
+            <div class="sso-pills">
+              <span class="sso-pill"><i class="bi bi-receipt"></i> POS Dual GST</span>
+              <span class="sso-pill"><i class="bi bi-boxes"></i> Inventory & PO</span>
+              <span class="sso-pill"><i class="bi bi-person-badge"></i> HR & Attendance</span>
+              <span class="sso-pill"><i class="bi bi-graph-up-arrow"></i> GSTR-1 Tax Audit</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       INTERACTIVE MODULAR CALCULATOR
+  ============================================= -->
+  <section id="calculator" class="calc-section py-100">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge-pill gold">
+          <i class="bi bi-sliders"></i> Modular Customization
+        </div>
+        <h2>Configure Your <span class="gradient-text">Business Suite</span></h2>
+        <p>Pick only the modules your business operations require today. Scale seamlessly and unlock additional modules anytime with your unified SSO account.</p>
+      </div>
+
+      <div class="calc-container">
+        <div class="calc-grid">
+          <!-- Module Choice List -->
+          <div>
+            <h4 style="margin-bottom:18px;">Select Active Modules:</h4>
+
+            <!-- Module 1 -->
+            <div class="module-choice-card selected" onclick="toggleModuleCalc(this, 'erp')">
+              <div class="choice-left">
+                <div class="choice-icon" style="background:rgba(8,214,255,0.15); color:var(--color-erp);">
+                  <i class="bi bi-building"></i>
+                </div>
+                <div>
+                  <div class="choice-title">
+                    Business ERP
+                    <a href="https://erp.inspenox.in/" target="_blank" onclick="event.stopPropagation();">Launch App <i class="bi bi-box-arrow-up-right"></i></a>
+                  </div>
+                  <div class="choice-desc">Multi-Branch, Supply Chain, Dual B2B & B2C Billing, Automated Payroll & GSTR-1</div>
+                </div>
+              </div>
+              <div class="custom-checkbox"><i class="bi bi-check"></i></div>
+            </div>
+
+            <!-- Module 2 -->
+            <div class="module-choice-card selected" onclick="toggleModuleCalc(this, 'crm')">
+              <div class="choice-left">
+                <div class="choice-icon" style="background:rgba(99,102,241,0.15); color:var(--color-crm);">
+                  <i class="bi bi-person-lines-fill"></i>
+                </div>
+                <div>
+                  <div class="choice-title">
+                    Enterprise B2B CRM
+                    <a href="https://crm.inspenox.in/" target="_blank" onclick="event.stopPropagation();">Launch App <i class="bi bi-box-arrow-up-right"></i></a>
+                  </div>
+                  <div class="choice-desc">Leads, BANT Scoring, Visual Kanban Pipeline, CPQ Quotations & SLA Service Desk</div>
+                </div>
+              </div>
+              <div class="custom-checkbox"><i class="bi bi-check"></i></div>
+            </div>
+
+            <!-- Module 3 -->
+            <div class="module-choice-card selected" onclick="toggleModuleCalc(this, 'marketing')">
+              <div class="choice-left">
+                <div class="choice-icon" style="background:rgba(16,185,129,0.15); color:var(--color-marketing);">
+                  <i class="bi bi-whatsapp"></i>
+                </div>
+                <div>
+                  <div class="choice-title">
+                    Omnichannel Marketing Suite
+                    <a href="https://marketing.inspenox.in/" target="_blank" onclick="event.stopPropagation();">Launch App <i class="bi bi-box-arrow-up-right"></i></a>
+                  </div>
+                  <div class="choice-desc">Meta WhatsApp Cloud API Broadcasts, 2-Way Chat Inbox, HTML Email & DLT SMS</div>
+                </div>
+              </div>
+              <div class="custom-checkbox"><i class="bi bi-check"></i></div>
+            </div>
+
+            <!-- Module 4 -->
+            <div class="module-choice-card" onclick="toggleModuleCalc(this, 'hospital')">
+              <div class="choice-left">
+                <div class="choice-icon" style="background:rgba(244,63,94,0.15); color:var(--color-hospital);">
+                  <i class="bi bi-hospital"></i>
+                </div>
+                <div>
+                  <div class="choice-title">
+                    Hospital ERP (icare)
+                    <a href="https://icare.inspenox.in/" target="_blank" onclick="event.stopPropagation();">Launch App <i class="bi bi-box-arrow-up-right"></i></a>
+                  </div>
+                  <div class="choice-desc">EMR, OPD/IPD Vitals, Integrated Pharmacy, Diagnostic Labs, Unified Bills & Maintenance</div>
+                </div>
+              </div>
+              <div class="custom-checkbox"><i class="bi bi-check"></i></div>
+            </div>
+
+            <!-- Module 5 -->
+            <div class="module-choice-card selected" onclick="toggleModuleCalc(this, 'dms')">
+              <div class="choice-left">
+                <div class="choice-icon" style="background:rgba(245,158,11,0.15); color:var(--color-dms);">
+                  <i class="bi bi-folder-check"></i>
+                </div>
+                <div>
+                  <div class="choice-title">
+                    Corporate Asset DMS
+                    <a href="https://dms.inspenox.in/" target="_blank" onclick="event.stopPropagation();">Launch App <i class="bi bi-box-arrow-up-right"></i></a>
+                  </div>
+                  <div class="choice-desc">10 Functional Vaults (ITR, GST, Bank, Vehicles, Property), Balance Masking & Tickers</div>
+                </div>
+              </div>
+              <div class="custom-checkbox"><i class="bi bi-check"></i></div>
+            </div>
+          </div>
+
+          <!-- Summary Column -->
+          <div class="calc-summary-card">
+            <div>
+              <div class="summary-title">
+                <i class="bi bi-bag-check-fill" style="color:var(--cyan);"></i> Your Custom Suite
+              </div>
+              <p style="font-size:13px; color:var(--text-secondary); margin-bottom:16px; line-height: 1.6;">
+                Includes unified Custom SSO access and branch manager portal.
+              </p>
+
+              <ul class="selected-items-list" id="selectedItemsList">
+                <li class="selected-item-row"><span>Business ERP</span><strong>Selected</strong></li>
+                <li class="selected-item-row"><span>Enterprise CRM</span><strong>Selected</strong></li>
+                <li class="selected-item-row"><span>Marketing Suite</span><strong>Selected</strong></li>
+                <li class="selected-item-row"><span>Corporate Asset DMS</span><strong>Selected</strong></li>
+              </ul>
+            </div>
+
+            <div>
+              <div class="summary-total-box">
+                <span>Selected Engine Modules</span>
+                <h3 id="moduleCountDisplay">4 Modules Selected</h3>
+              </div>
+
+              <a href="#demo" class="btn btn-primary" style="width:100%;" onclick="prefillSubscriptionForm()">
+                <i class="bi bi-arrow-right-circle-fill"></i> Subscribe / Book Demo
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       MODULES DEEP DIVE SECTION (TABS)
+  ============================================= -->
+  <section id="modules" class="modules-section py-100">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge-pill">
+          <i class="bi bi-grid-fill"></i> Full Functional Deep Dive
+        </div>
+        <h2>Explore Every Feature of the <span class="gradient-text">Modules</span></h2>
+        <p>Zero compromises. Each module was analyzed directly from active production codebases to deliver industrial-strength performance.</p>
+      </div>
+
+      <!-- Tab Buttons -->
+      <div class="module-nav-tabs">
+        <button class="mod-tab-btn active" onclick="showModuleTab('tab-erp', this)">
+          <i class="bi bi-building"></i> Business ERP
+        </button>
+        <button class="mod-tab-btn" onclick="showModuleTab('tab-crm', this)">
+          <i class="bi bi-person-lines-fill"></i> Enterprise CRM
+        </button>
+        <button class="mod-tab-btn" onclick="showModuleTab('tab-marketing', this)">
+          <i class="bi bi-whatsapp"></i> Omnichannel Marketing
+        </button>
+        <button class="mod-tab-btn" onclick="showModuleTab('tab-hospital', this)">
+          <i class="bi bi-hospital"></i> Hospital ERP (icare)
+        </button>
+        <button class="mod-tab-btn" onclick="showModuleTab('tab-dms', this)">
+          <i class="bi bi-folder-check"></i> Corporate Asset DMS
+        </button>
+      </div>
+
+      <!-- ==================== TAB 1: BUSINESS ERP ==================== -->
+      <div class="mod-tab-pane active" id="tab-erp">
+        <div class="module-hero-banner">
+          <div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+              <span class="badge-pill">Flagship Operations Core</span>
+              <span class="badge-pill purple" style="background:rgba(168,85,247,0.15); color:#a855f7; border-color:rgba(168,85,247,0.3);"><i class="bi bi-robot"></i> AI-Powered for Seamless Work</span>
+            </div>
+            <h3>Business ERP — Multi-Branch & Supply Chain Suite</h3>
+            <p>Built for manufacturers, wholesale distributors, retail multi-stores, and branch operations with AI stock forecasting, strict role access, automated payroll, and dual B2B & B2C billing.</p>
+          </div>
+          <a href="https://erp.inspenox.in/" target="_blank" class="btn btn-primary btn-sm">Launch Business ERP <i class="bi bi-box-arrow-up-right"></i></a>
+        </div>
+
+        <!-- Dual Billing Highlight -->
+        <div class="dual-billing-box">
+          <div class="billing-mode-card b2b">
+            <h4><i class="bi bi-briefcase-fill" style="color:var(--cyan);"></i> B2B Wholesale & Corporate Billing</h4>
+            <p>Engineered for high-volume enterprise distribution with complete GST & statutory documentation.</p>
+            <ul style="list-style:none; font-size:13px; display:flex; flex-direction:column; gap:6px;">
+              <li><i class="bi bi-check-lg" style="color:var(--cyan);"></i> Official Tax Invoices with Buyer GSTIN & Place of Supply validation</li>
+              <li><i class="bi bi-check-lg" style="color:var(--cyan);"></i> CGST / SGST split for intra-state and IGST for inter-state</li>
+              <li><i class="bi bi-check-lg" style="color:var(--cyan);"></i> Delivery Challans, PO References, Credit terms & Accounts Receivable tracking</li>
+            </ul>
+          </div>
+          <div class="billing-mode-card b2c">
+            <h4><i class="bi bi-shop" style="color:var(--gold);"></i> B2C Retail Counter Point of Sale (POS)</h4>
+            <p>Ultra-fast retail counter checkout built for high-throughput footfall and instantaneous reconciliation.</p>
+            <ul style="list-style:none; font-size:13px; display:flex; flex-direction:column; gap:6px;">
+              <li><i class="bi bi-check-lg" style="color:var(--gold);"></i> Instant USB / Bluetooth barcode scanner search & auto cart add</li>
+              <li><i class="bi bi-check-lg" style="color:var(--gold);"></i> Thermal receipt printing (58mm / 80mm) with business QR code</li>
+              <li><i class="bi bi-check-lg" style="color:var(--gold);"></i> Split payments: Cash, UPI Dynamic QR, Card Swipe & Retail Returns</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="features-grid-3">
+          <div class="feat-card">
+            <div class="feat-card-icon" style="background:rgba(168,85,247,0.12); color:#a855f7;">
+              <i class="bi bi-cpu-fill"></i>
+            </div>
+            <h4>AI Stock & Financial Intelligence</h4>
+            <p>Predictive AI algorithms forecast inventory demand and validate financial compliance automatically.</p>
+            <ul>
+              <li><i class="bi bi-check-lg"></i> AI demand forecasting & automated reorder point calculation</li>
+              <li><i class="bi bi-check-lg"></i> AI payroll audit flagging attendance anomalies & advance deductions</li>
+              <li><i class="bi bi-check-lg"></i> Automated preliminary GSTR-1 tax compliance error checks</li>
+            </ul>
+          </div>
+
+          <div class="feat-card">
+            <div class="feat-card-icon" style="background:rgba(8,214,255,0.12); color:var(--color-erp);">
+              <i class="bi bi-person-badge"></i>
+            </div>
+            <h4>HR, Biometrics & Payroll Engine</h4>
+            <p>Biometric & geofenced staff attendance tracking with automated salary slip generation.</p>
+            <ul>
+              <li><i class="bi bi-check-lg"></i> Shift scheduling & biometric/geofenced attendance logging</li>
+              <li><i class="bi bi-check-lg"></i> Configurable late/absent salary deduction rules & payslips</li>
+              <li><i class="bi bi-check-lg"></i> Employee advance loan ledger & monthly EMI recovery</li>
+            </ul>
+          </div>
+
+          <div class="feat-card">
+            <div class="feat-card-icon" style="background:rgba(8,214,255,0.12); color:var(--color-erp);">
+              <i class="bi bi-boxes"></i>
+            </div>
+            <h4>Multi-Warehouse Supply Chain</h4>
+            <p>Real-time centralized inventory synchronizing warehouse stocks across multiple retail outlets.</p>
+            <ul>
+              <li><i class="bi bi-check-lg"></i> Barcode generation, batch tagging & serial number tracking</li>
+              <li><i class="bi bi-check-lg"></i> Branch-to-branch stock transfer with transit verification</li>
+              <li><i class="bi bi-check-lg"></i> Purchase Orders (PO) with automated supplier vendor matching</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB 2: ENTERPRISE CRM ==================== -->
+      <div class="mod-tab-pane" id="tab-crm">
+        <div class="module-hero-banner">
+          <div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+              <span class="badge-pill">High-Velocity Sales</span>
+              <span class="badge-pill purple" style="background:rgba(168,85,247,0.15); color:#a855f7; border-color:rgba(168,85,247,0.3);"><i class="bi bi-robot"></i> AI-Powered for Seamless Work</span>
+            </div>
+            <h3>Enterprise CRM — Leads to Conversions & SLA Service Desk</h3>
+            <p>Empower your sales executives with AI lead scoring, automated qualification, visual Kanban pipelines, CPQ quotation generation, and post-sales support SLA tracking.</p>
+          </div>
+          <a href="https://crm.inspenox.in/" target="_blank" class="btn btn-primary btn-sm">Launch Enterprise CRM <i class="bi bi-box-arrow-up-right"></i></a>
+        </div>
+
+        <div class="features-grid-3">
+          <div class="feat-card">
+            <div class="feat-card-icon" style="background:rgba(168,85,247,0.12); color:#a855f7;">
+              <i class="bi bi-stars"></i>
+            </div>
+            <h4>AI Lead Scoring & Next-Best-Action</h4>
+            <p>Predictive AI analyzes buyer signals and suggests the exact next step for sales reps to close deals faster.</p>
+            <ul>
+              <li><i class="bi bi-check-lg"></i> Automated AI lead scoring based on BANT & interaction frequency</li>
+              <li><i class="bi bi-check-lg"></i> AI next-best-action prompts for follow-ups and meeting scheduling</li>
+              <li><i class="bi bi-check-lg"></i> AI email response drafting & win-probability forecasting</li>
+            </ul>
+          </div>
+
+          <div class="feat-card">
+            <div class="feat-card-icon" style="background:rgba(99,102,241,0.12); color:var(--color-crm);">
+              <i class="bi bi-funnel-fill"></i>
+            </div>
+            <h4>Omnichannel Lead Capture & Distribution</h4>
+            <p>Ingest leads automatically from web forms, WhatsApp, Meta Ads, and direct phone inquiries.</p>
+            <ul>
+              <li><i class="bi bi-check-lg"></i> Automated BANT qualification: Budget, Authority, Need, Timeline</li>
+              <li><i class="bi bi-check-lg"></i> Round-robin sales rep assignment based on branch workload</li>
+              <li><i class="bi bi-check-lg"></i> Duplicate lead detection and 360° interaction history timeline</li>
+            </ul>
+          </div>
+
+          <div class="feat-card">
+            <div class="feat-card-icon" style="background:rgba(99,102,241,0.12); color:var(--color-crm);">
+              <i class="bi bi-kanban"></i>
+            </div>
+            <h4>Kanban Pipeline & CPQ Quotations</h4>
+            <p>Track every deal across customizable pipeline stages with dynamic proposal generation.</p>
+            <ul>
+              <li><i class="bi bi-check-lg"></i> Drag-and-drop Kanban pipeline: Lead In → Demo → Quote → Won</li>
+              <li><i class="bi bi-check-lg"></i> Configure, Price, Quote (CPQ) builder with dynamic PDF export</li>
+              <li><i class="bi bi-check-lg"></i> Tiered SLA support tickets with automated supervisor escalation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB 3: OMNICHANNEL MARKETING ==================== -->
+      <div class="mod-tab-pane" id="tab-marketing">
+        <div class="module-hero-banner">
+          <div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+              <span class="badge-pill">Growth & Engagement Engine</span>
+              <span class="badge-pill purple" style="background:rgba(168,85,247,0.15); color:#a855f7; border-color:rgba(168,85,247,0.3);"><i class="bi bi-robot"></i> AI-Powered for Seamless Work</span>
+            </div>
+            <h3>Omnichannel Marketing — WhatsApp Cloud API, Email & SMS</h3>
+            <p>Turn customer phone numbers into high-converting revenue streams with AI message optimization. Broadcast targeted campaigns and manage conversations from a live chat inbox.</p>
+          </div>
+          <a href="https://marketing.inspenox.in/" target="_blank" class="btn btn-primary btn-sm">Launch Marketing Suite <i class="bi bi-box-arrow-up-right"></i></a>
+        </div>
+
+        <div class="features-grid-3">
+          <div class="feat-card">
+            <div class="feat-card-icon" style="background:rgba(168,85,247,0.12); color:#a855f7;">
+              <i class="bi bi-magic"></i>
+            </div>
+            <h4>AI Campaign Copywriter & Smart Dispatch</h4>
+            <p>Generate high-converting WhatsApp broadcasts and optimize send times using built-in AI engagement algorithms.</p>
+            <ul>
+              <li><i class="bi bi-check-lg"></i> AI copy generator for catchy headlines, offers & CTA buttons</li>
+              <li><i class="bi bi-check-lg"></i> AI optimal send-time predictor based on recipient activity history</li>
+              <li><i class="bi bi-check-lg"></i> Automated dynamic customer audience segmentation</li>
+            </ul>
+          </div>
+
+          <div class="feat-card">
+            <div class="feat-card-icon" style="background:rgba(16,185,129,0.12); color:var(--color-marketing);">
+              <i class="bi bi-whatsapp"></i>
+            </div>
+            <h4>Official Meta Cloud API Broadcasts</h4>
+            <p>Direct integration with Meta Graph Cloud API. Send thousands of rich WhatsApp template messages with 98% open rates.</p>
+            <ul>
+              <li><i class="bi bi-check-lg"></i> Bulk contact upload via Excel / CSV or sync from ERP & CRM</li>
+              <li><i class="bi bi-check-lg"></i> Personalized variables: <code>{{1}}</code> Name, <code>{{2}}</code> Order, <code>{{3}}</code> Discount</li>
+              <li><i class="bi bi-check-lg"></i> Interactive CTA buttons: "Visit Website", "Book Appointment", "Call Now"</li>
+            </ul>
+          </div>
+
+          <div class="feat-card">
+            <div class="feat-card-icon" style="background:rgba(16,185,129,0.12); color:var(--color-marketing);">
+              <i class="bi bi-chat-dots-fill"></i>
+            </div>
+            <h4>Multi-Agent Live Inbox & DLT SMS</h4>
+            <p>Converse in real time from a shared multi-agent inbox and deliver statutory SMS & HTML email campaigns.</p>
+            <ul>
+              <li><i class="bi bi-check-lg"></i> Unified messaging inbox supporting multiple branch agents</li>
+              <li><i class="bi bi-check-lg"></i> Quick-reply canned responses & media catalog attachments</li>
+              <li><i class="bi bi-check-lg"></i> TRAI DLT-compliant SMS gateway & HTML email newsletter builder</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB 4: HOSPITAL ERP (ICARE) ==================== -->
+      <div class="mod-tab-pane" id="tab-hospital">
+        <div class="module-hero-banner">
+          <div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+              <span class="badge-pill">Healthcare Operations Station</span>
+              <span class="badge-pill purple" style="background:rgba(168,85,247,0.15); color:#a855f7; border-color:rgba(168,85,247,0.3);"><i class="bi bi-robot"></i> AI-Powered for Seamless Work</span>
+            </div>
+            <h3>Hospital ERP (icare) — Clinical Care, Pharmacy & Labs</h3>
+            <p>A specialized healthcare management engine with AI diagnostic lab summary assistance, patient EMR records, OPD queues, IPD bed allocations, integrated pharmacy, and single-window billing.</p>
+          </div>
+          <a href="https://icare.inspenox.in/" target="_blank" class="btn btn-primary btn-sm">Launch icare ERP <i class="bi bi-box-arrow-up-right"></i></a>
+        </div>
+
+        <div class="features-grid-3">
+          <div class="feat-card">
+            <div class="feat-card-icon" style="background:rgba(168,85,247,0.12); color:#a855f7;">
+              <i class="bi bi-heart-pulse-fill"></i>
+            </div>
+            <h4>AI Lab Summary & Diagnostic Assistant</h4>
+            <p>AI assists clinicians by summarizing lab results, highlighting critical abnormal values, and suggesting prescription protocols.</p>
+            <ul>
+              <li><i class="bi bi-check-lg"></i> AI diagnostic report analyzer flagging critical abnormal ranges</li>
+              <li><i class="bi bi-check-lg"></i> AI prescription check for drug interaction & dosage safety</li>
+              <li><i class="bi bi-check-lg"></i> AI-driven OPD queue optimization for minimal patient wait times</li>
+            </ul>
+          </div>
+
+          <div class="feat-card">
+            <div class="feat-card-icon" style="background:rgba(244,63,94,0.12); color:var(--color-hospital);">
+              <i class="bi bi-journal-medical"></i>
+            </div>
+            <h4>EMR Records & OPD / IPD Station</h4>
+            <p>Complete clinical workflow from patient registration (MRN) to doctor OPD consultations and inpatient admission.</p>
+            <ul>
+              <li><i class="bi bi-check-lg"></i> Unique MRN patient registration & digital EMR medical history</li>
+              <li><i class="bi bi-check-lg"></i> IPD bed management: Ward, Semi-Private, Deluxe, and ICU allocation</li>
+              <li><i class="bi bi-check-lg"></i> Bedside nursing vitals logging: BP, SpO2, Pulse, Glucose, Clinical Notes</li>
+            </ul>
+          </div>
+
+          <div class="feat-card">
+            <div class="feat-card-icon" style="background:rgba(244,63,94,0.12); color:var(--color-hospital);">
+              <i class="bi bi-capsule"></i>
+            </div>
+            <h4>Integrated Hospital Pharmacy & Labs</h4>
+            <p>Connected directly to doctors' digital prescriptions. Pharmacists dispense medication and labs execute tests seamlessly.</p>
+            <ul>
+              <li><i class="bi bi-check-lg"></i> Digital prescription pull from doctor consultation desk</li>
+              <li><i class="bi bi-check-lg"></i> Batch number tracking, expiry date auto-quarantine, and stock alerts</li>
+              <li><i class="bi bi-check-lg"></i> Single-window master billing combining consultation, pharmacy, labs & beds</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== TAB 5: CORPORATE ASSET DMS ==================== -->
+      <div class="mod-tab-pane" id="tab-dms">
+        <div class="module-hero-banner">
+          <div>
+            <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:8px;">
+              <span class="badge-pill">Statutory Vault & Asset Registry</span>
+              <span class="badge-pill purple" style="background:rgba(168,85,247,0.15); color:#a855f7; border-color:rgba(168,85,247,0.3);"><i class="bi bi-robot"></i> AI-Powered for Seamless Work</span>
+            </div>
+            <h3>Corporate Asset DMS — 10 Specialized Document Vaults</h3>
+            <p>Secures every critical statutory filing, legal title, tax certificate, employee dossier, and vehicle record with AI OCR parsing, privacy balance masking, and statutory alert tickers.</p>
+          </div>
+          <a href="https://dms.inspenox.in/" target="_blank" class="btn btn-primary btn-sm">Launch Asset Manager <i class="bi bi-box-arrow-up-right"></i></a>
+        </div>
+
+        <div style="margin-bottom:24px;">
+          <div class="feat-card" style="border-color:rgba(168,85,247,0.3); background:rgba(168,85,247,0.04);">
+            <div class="feat-card-icon" style="background:rgba(168,85,247,0.15); color:#a855f7;">
+              <i class="bi bi-file-earmark-pdf-fill"></i>
+            </div>
+            <h4 style="color:#a855f7;"><i class="bi bi-robot"></i> AI OCR & Intelligent Document Parsing</h4>
+            <p>Automatically extract text, dates, invoice numbers, and statutory metadata from uploaded PDFs and scanned documents for instant full-text search.</p>
+            <ul style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:8px; list-style:none; padding:0;">
+              <li><i class="bi bi-check-lg" style="color:#a855f7;"></i> AI OCR automatic field extraction (GSTIN, Invoice Amount, Filing Date)</li>
+              <li><i class="bi bi-check-lg" style="color:#a855f7;"></i> Automated document auto-tagging into correct functional vaults</li>
+              <li><i class="bi bi-check-lg" style="color:#a855f7;"></i> Full-text deep search across scanned paper documents & PDFs</li>
+            </ul>
+          </div>
+        </div>
+
+        <h4 style="margin-bottom:16px;">The 10 Functional Operational Vaults:</h4>
+        <div class="vaults-grid">
+          <div class="vault-box">
+            <i class="bi bi-file-earmark-text-fill"></i>
+            <h5>ITR Vault</h5>
+            <span>Income Tax returns, Form 26AS, acknowledgments</span>
+          </div>
+          <div class="vault-box">
+            <i class="bi bi-percent"></i>
+            <h5>GST Vault</h5>
+            <span>GSTR-1, GSTR-3B filings, Challans, Certificates</span>
+          </div>
+          <div class="vault-box">
+            <i class="bi bi-bank"></i>
+            <h5>Bank Vault</h5>
+            <span>Statements, Loan sanctions, KYC, Overdraft limits</span>
+          </div>
+          <div class="vault-box">
+            <i class="bi bi-building-fill"></i>
+            <h5>Office Vault</h5>
+            <span>Lease agreements, Utilities, Municipal trade licenses</span>
+          </div>
+          <div class="vault-box">
+            <i class="bi bi-people-fill"></i>
+            <h5>Employees</h5>
+            <span>Offer letters, ID proof, PF/ESI records, NDA contracts</span>
+          </div>
+          <div class="vault-box">
+            <i class="bi bi-truck"></i>
+            <h5>Vehicles</h5>
+            <span>RC, Insurance, PUC, 10,000 KM service monitor</span>
+          </div>
+          <div class="vault-box">
+            <i class="bi bi-airplane-fill"></i>
+            <h5>TA / Travel</h5>
+            <span>Travel allowances, Fuel bills, Hotel vouchers, Lodging</span>
+          </div>
+          <div class="vault-box">
+            <i class="bi bi-shield-lock-fill"></i>
+            <h5>Property</h5>
+            <span>Deeds, Land titles with privacy balance toggle masking</span>
+          </div>
+          <div class="vault-box">
+            <i class="bi bi-cash-coin"></i>
+            <h5>Advances</h5>
+            <span>Employee loan ledger, Recovery tracking, EMI dates</span>
+          </div>
+          <div class="vault-box">
+            <i class="bi bi-clipboard2-check-fill"></i>
+            <h5>Formalities</h5>
+            <span>RoC filings, Board resolutions, Director KYC, Audits</span>
+          </div>
+        </div>
+
+        <div class="features-grid-2">
+          <div class="feat-card">
+            <div class="feat-card-icon" style="background:rgba(245,158,11,0.12); color:var(--color-dms);">
+              <i class="bi bi-bell-fill"></i>
+            </div>
+            <h4>Scrolling Statutory Alert Ticker</h4>
+            <p>Never miss a statutory deadline again. The DMS displays an active ticker tracking critical recurring corporate obligations.</p>
+            <ul>
+              <li><i class="bi bi-check-lg"></i> GST 15-day filing countdowns & monthly TDS deposit alerts</li>
+              <li><i class="bi bi-check-lg"></i> Vehicle insurance renewal & 10,000 KM odometer service notifications</li>
+              <li><i class="bi bi-check-lg"></i> Employee contract expiries and branch rent renewal reminders</li>
+            </ul>
+          </div>
+
+          <div class="feat-card">
+            <div class="feat-card-icon" style="background:rgba(245,158,11,0.12); color:var(--color-dms);">
+              <i class="bi bi-eye-slash-fill"></i>
+            </div>
+            <h4>Executive Balance Masking & Privacy Controls</h4>
+            <p>Designed for branch managers presenting in open office settings. Protect high-value asset amounts with 1-click privacy masking.</p>
+            <ul>
+              <li><i class="bi bi-check-lg"></i> 1-Click Toggle: Instantly masks bank balances and land valuations to <code>₹ ••••••••</code></li>
+              <li><i class="bi bi-check-lg"></i> Role-based file permissions: View-Only, Download-Allowed, or Admin-Confidential</li>
+              <li><i class="bi bi-check-lg"></i> Tamper-proof audit logs recording file access timestamp and user ID</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       TARGET INDUSTRIES
+  ============================================= -->
+  <section id="industries" class="industries-section py-100">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge-pill">
+          <i class="bi bi-buildings"></i> Sector Adaptability
+        </div>
+        <h2>Engineered for India's Diverse <span class="gradient-text">Commercial Landscape</span></h2>
+        <p>Whether you manage a chain of retail stores, an enterprise sales consultancy, or a healthcare hospital, Inspenox Business Suite configures to your workflow.</p>
+      </div>
+
+      <div class="industries-grid">
+        <div class="ind-card">
+          <i class="bi bi-shop"></i>
+          <h4>Wholesale & Retail</h4>
+          <p>Multi-branch barcode inventory, POS counter billing, supplier PO tracking, and consumer WhatsApp offers.</p>
+        </div>
+        <div class="ind-card">
+          <i class="bi bi-hospital"></i>
+          <h4>Hospitals & Clinics</h4>
+          <p>EMR patient charts, OPD queues, in-house pharmacy dispensing, diagnostic pathology labs, and single-window billing.</p>
+        </div>
+        <div class="ind-card">
+          <i class="bi bi-buildings"></i>
+          <h4>Corporate & B2B Firms</h4>
+          <p>High-velocity CRM pipeline, CPQ quotation builder, client SLA ticketing, and 10 corporate asset DMS vaults.</p>
+        </div>
+        <div class="ind-card">
+          <i class="bi bi-gear-wide-connected"></i>
+          <h4>Automotive & Service</h4>
+          <p>Workshop service job sheets, spare parts billing, technician commission splits, and vehicle odometer service tickers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FAQ ACCORDION
+  ============================================= -->
+  <section id="faq" class="faq-section py-100">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge-pill">
+          <i class="bi bi-question-circle-fill"></i> Common Questions
+        </div>
+        <h2>Frequently Asked <span class="gradient-text">Questions</span></h2>
+        <p>Everything you need to know about subscribing to and deploying Inspenox Business Suite.</p>
+      </div>
+
+      <div class="faq-container">
+        <!-- Q1 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>Can I subscribe to only one module or do I need all modules?</span>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            You can subscribe to exactly the modules your business needs. If you only require Business ERP today, you subscribe to ERP alone. As your operations expand, you can unlock CRM, Marketing, Hospital ERP, or Asset DMS at any time with your existing master login.
+          </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>How does Custom SSO benefit business owners with multiple branches?</span>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Custom Single Sign-On gives branch managers and owners one master email and password. Once logged in, you can hop between ERP billing, CRM lead pipelines, WhatsApp marketing broadcasts, and hospital management from a universal top switcher bar without authenticating separately.
+          </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>Does the Business ERP support both retail counter sales and corporate tax invoices?</span>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Yes! Business ERP includes dedicated Dual POS billing: a high-speed B2C retail counter mode supporting barcode scanners, thermal receipts, and split payments, as well as a full B2B Wholesale mode generating GST tax invoices with buyer GSTIN, CGST/SGST/IGST splits, and PO references.
+          </div>
+        </div>
+
+        <!-- Q4 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>How does the Hospital ERP integrate Pharmacy and Diagnostic Labs?</span>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Hospital ERP (icare) links clinical care directly with inventory and diagnostics. When an OPD or IPD doctor writes a prescription or orders lab investigations, the order instantly routes to the in-house pharmacy and lab desks. All dispensed medications, test fees, bed charges, and doctor fees are aggregated onto a single unified hospital bill.
+          </div>
+        </div>
+
+        <!-- Q5 -->
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-question">
+            <span>How does the onboarding and feature setup work?</span>
+            <i class="bi bi-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Onboarding is completely streamlined. When you register and select your required modules, our engineering team provisions your custom environment, imports your existing catalog or patient records, configures your branch manager roles, and delivers a fully functioning, ready-to-run suite.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       INQUIRY & REGISTRATION FORM
+  ============================================= -->
+  <section id="demo" class="contact-section py-100">
+    <div class="container">
+      <div class="section-header">
+        <div class="badge-pill">
+          <i class="bi bi-rocket-takeoff-fill"></i> Ready to Upgrade?
+        </div>
+        <h2>Register for <span class="gradient-text">Inspenox Business Suite</span></h2>
+        <p>Fill out the form below to request an interactive walkthrough or activate your custom modular subscription.</p>
+      </div>
+
+      <div class="form-wrapper">
+        <form id="suiteInquiryForm" onsubmit="handleSuiteSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="regName">Full Name *</label>
+              <input type="text" id="regName" class="form-control" placeholder="e.g. Ramesh Varma" required />
+            </div>
+            <div class="form-group">
+              <label for="regEmail">Corporate Email *</label>
+              <input type="email" id="regEmail" class="form-control" placeholder="you@company.com" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="regCompany">Organization / Business Name *</label>
+              <input type="text" id="regCompany" class="form-control" placeholder="Your Company Name" required />
+            </div>
+            <div class="form-group">
+              <label for="regPhone">Phone / WhatsApp Number *</label>
+              <input type="tel" id="regPhone" class="form-control" placeholder="+91 XXXXX XXXXX" required />
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="regRole">Your Role</label>
+              <select id="regRole" class="form-control">
+                <option value="Business Owner / Founder">Business Owner / Founder</option>
+                <option value="Branch Manager">Branch Manager / Store In-Charge</option>
+                <option value="Managing Director / CEO">Managing Director / CEO</option>
+                <option value="Hospital Administrator">Hospital Administrator</option>
+                <option value="Operations Head">Operations Head</option>
+                <option value="Finance & Accounts Head">Finance & Accounts Head</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="regModules">Interested Modules</label>
+              <select id="regModules" class="form-control">
+                <option value="All Modules (Full Suite with Custom SSO)">All Modules (Full Suite with Custom SSO)</option>
+                <option value="Business ERP (Dual B2B & B2C Billing)">Business ERP (Dual B2B & B2C Billing)</option>
+                <option value="Enterprise B2B CRM">Enterprise B2B CRM</option>
+                <option value="Omnichannel Marketing (WhatsApp, Email & SMS)">Omnichannel Marketing (WhatsApp, Email & SMS)</option>
+                <option value="Hospital ERP / icare (Pharmacy, Labs & Billing)">Hospital ERP / icare (Pharmacy, Labs & Billing)</option>
+                <option value="Corporate Asset DMS (10 Vaults)">Corporate Asset DMS (10 Vaults)</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="regRequirements">Specific Requirements or Questions</label>
+            <textarea id="regRequirements" class="form-control" rows="3" placeholder="Describe your store count, team size, or specific features needed..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary" style="width:100%; font-size:15px; padding:14px;">
+            <i class="bi bi-send-fill"></i> Submit Registration & Request Onboarding
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- =============================================
+       FOOTER
+  ============================================= -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <a href="../index.html">
+            <img src="../assets/images/dark11.png" alt="Inspenox Logo" />
+          </a>
+        </div>
+        <ul class="footer-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="../index.html#products">Products</a></li>
+          <li><a href="lms.html">Injara LMS</a></li>
+          <li><a href="oem.html">OEM Automation</a></li>
+          <li><a href="business-suite.html" style="color:var(--cyan); font-weight:600;">Business Suite</a></li>
+          <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2026 Inspenox Inc. — India's First Industry 4.0 Platform. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============================================
+       SCRIPTS
+  ============================================= -->
+  <script>
+    /* Theme Management (Synchronized with index.html) */
+    const root = document.documentElement;
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const siteLogo = document.getElementById('siteLogo');
+    const navbar = document.getElementById('navbar');
+
+    function applyTheme(theme) {
+      root.setAttribute('data-theme', theme);
+      root.setAttribute('data-bs-theme', theme);
+      localStorage.setItem('theme', theme);
+
+      if (theme === 'light') {
+        if (themeIcon) themeIcon.className = 'bi bi-sun-fill';
+        if (siteLogo) {
+          const light = siteLogo.getAttribute('data-light');
+          if (light) siteLogo.src = light;
+        }
+      } else {
+        if (themeIcon) themeIcon.className = 'bi bi-moon-stars-fill';
+        if (siteLogo) {
+          const dark = siteLogo.getAttribute('data-dark');
+          if (dark) siteLogo.src = dark;
+        }
+      }
+    }
+
+    function toggleTheme() {
+      const current = root.getAttribute('data-theme') || 'dark';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    }
+
+    // Initialize Theme using shared 'theme' key
+    const savedTheme = localStorage.getItem('theme')
+      || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    applyTheme(savedTheme);
+
+    /* Navbar Scrolled State */
+    window.addEventListener('scroll', () => {
+      if (navbar) {
+        navbar.classList.toggle('scrolled', window.scrollY > 40);
+      }
+    }, { passive: true });
+
+    /* Mobile Menu (Exact index.html Logic & Animation) */
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    function closeMenu() {
+      if (hamburger) hamburger.classList.remove('open');
+      if (mobileMenu) mobileMenu.classList.remove('open');
+    }
+
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', (e) => {
+        e.stopPropagation();
+        hamburger.classList.toggle('open');
+        mobileMenu.classList.toggle('open');
+      });
+
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+
+      window.addEventListener('scroll', () => {
+        if (mobileMenu.classList.contains('open')) closeMenu();
+      }, { passive: true });
+
+      document.addEventListener('click', (e) => {
+        if (navbar && !navbar.contains(e.target)) closeMenu();
+      });
+    }
+
+    /* Interactive SSO Switcher Demo */
+    const ssoPreviews = {
+      erp: {
+        title: 'Business ERP Workspace',
+        icon: 'bi-building',
+        colorVar: 'var(--color-erp)',
+        desc: 'Active Branch: Main Store Location | Dual B2B & B2C Billing active with real-time stock sync & automated payroll deduction engine.',
+        pills: ['POS Dual GST', 'Inventory & PO', 'HR & Attendance', 'GSTR-1 Tax Audit']
+      },
+      crm: {
+        title: 'Enterprise B2B CRM Pipeline',
+        icon: 'bi-person-lines-fill',
+        colorVar: 'var(--color-crm)',
+        desc: 'Pipeline Velocity: ₹1.4 Cr Active Deals | 342 Leads undergoing BANT qualification with automated round-robin sales routing.',
+        pills: ['Kanban Pipeline', 'CPQ Proposals', 'SLA Service Desk', 'Account 360°']
+      },
+      marketing: {
+        title: 'Omnichannel Marketing Hub',
+        icon: 'bi-whatsapp',
+        colorVar: 'var(--color-marketing)',
+        desc: 'Official WhatsApp Meta Cloud API: Broadcast campaign running with 94.6% delivery rate | 2-Way Live Chat Customer Inbox active.',
+        pills: ['Meta Cloud WABA', 'Excel Broadcasts', 'HTML Email Engine', 'DLT SMS Alerts']
+      },
+      hospital: {
+        title: 'Hospital ERP (icare) Station',
+        icon: 'bi-hospital',
+        colorVar: 'var(--color-hospital)',
+        desc: 'Station: General & ICU Wards | 89% Bed Occupancy | Integrated Pharmacy dispensing & Diagnostic lab investigations active.',
+        pills: ['EMR Patient MRN', 'In-House Pharmacy', 'Diagnostic Labs', 'Unified Hospital Bill']
+      },
+      dms: {
+        title: 'Corporate Asset DMS Vault',
+        icon: 'bi-folder-check',
+        colorVar: 'var(--color-dms)',
+        desc: 'Vault Status: 10 Operational Vaults active | GST 15-day filing alert ticker active | Vehicle 10,000 KM service monitor running.',
+        pills: ['ITR & GST Vaults', 'Vehicle 10k Alert', 'Property Mask Toggle', 'Bank & Loans']
+      }
+    };
+
+    function switchSSODemo(key, btnEl) {
+      const buttons = document.querySelectorAll('#ssoSwitcherBar .app-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      if (btnEl) btnEl.classList.add('active');
+
+      const data = ssoPreviews[key];
+      const box = document.getElementById('ssoPreviewBox');
+      if (box && data) {
+        box.innerHTML = `
+          <h4><i class="bi ${data.icon}" style="color:${data.colorVar};"></i> ${data.title}</h4>
+          <p>${data.desc}</p>
+          <div class="sso-pills">
+            ${data.pills.map(p => `<span class="sso-pill"><i class="bi bi-check2"></i> ${p}</span>`).join('')}
+          </div>
+        `;
+      }
+    }
+
+    /* Modular Calculator */
+    const selectedModules = new Set(['erp', 'crm', 'marketing', 'dms']);
+    const moduleNames = {
+      erp: 'Business ERP',
+      crm: 'Enterprise CRM',
+      marketing: 'Marketing Suite',
+      hospital: 'Hospital ERP (icare)',
+      dms: 'Corporate Asset DMS'
+    };
+
+    function toggleModuleCalc(el, key) {
+      if (selectedModules.has(key)) {
+        if (selectedModules.size === 1) {
+          alert('At least one module must be selected.');
+          return;
+        }
+        selectedModules.delete(key);
+        el.classList.remove('selected');
+      } else {
+        selectedModules.add(key);
+        el.classList.add('selected');
+      }
+      updateCalcSummary();
+    }
+
+    function updateCalcSummary() {
+      const list = document.getElementById('selectedItemsList');
+      if (!list) return;
+      list.innerHTML = '';
+      selectedModules.forEach(mod => {
+        const li = document.createElement('li');
+        li.className = 'selected-item-row';
+        li.innerHTML = `<span>${moduleNames[mod]}</span><strong>Selected</strong>`;
+        list.appendChild(li);
+      });
+      const countEl = document.getElementById('moduleCountDisplay');
+      if (countEl) countEl.textContent = `${selectedModules.size} Modules Selected`;
+    }
+
+    function prefillSubscriptionForm() {
+      const select = document.getElementById('regModules');
+      if (!select) return;
+      if (selectedModules.size === 5) {
+        select.value = 'All Modules (Full Suite with Custom SSO)';
+      } else if (selectedModules.has('hospital')) {
+        select.value = 'Hospital ERP / icare (Pharmacy, Labs & Billing)';
+      } else if (selectedModules.has('erp')) {
+        select.value = 'Business ERP (Dual B2B & B2C Billing)';
+      }
+    }
+
+    /* Module Tabs */
+    function showModuleTab(tabId, btnEl) {
+      const tabs = document.querySelectorAll('.mod-tab-pane');
+      tabs.forEach(t => t.classList.remove('active'));
+      const buttons = document.querySelectorAll('.mod-tab-btn');
+      buttons.forEach(b => b.classList.remove('active'));
+
+      const targetTab = document.getElementById(tabId);
+      if (targetTab) targetTab.classList.add('active');
+      if (btnEl) btnEl.classList.add('active');
+    }
+
+    /* FAQ Accordion */
+    function toggleFaq(item) {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    }
+
+    /* Form Submission */
+    function handleSuiteSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('regName').value;
+      const company = document.getElementById('regCompany').value;
+      const modules = document.getElementById('regModules').value;
+      alert(`Thank you, ${name}! Your registration for Inspenox Business Suite (${modules}) for ${company} has been received. Our onboarding team will contact you shortly to configure your custom SSO access.`);
+      document.getElementById('suiteInquiryForm').reset();
+    }
+  </script>
+</body>
+
+</html>

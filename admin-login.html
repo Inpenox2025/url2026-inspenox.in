@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Inspenox</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            transition: all 0.4s ease;
+        }
+
+        html[data-bs-theme="dark"] body {
+            background: linear-gradient(to bottom right, #020810, #081428);
+            color: #fff;
+        }
+
+        html[data-bs-theme="light"] body {
+            background: linear-gradient(135deg, #ffffff, #e6f0ff);
+            color: #111;
+        }
+
+        .login-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 420px;
+            padding: 30px;
+            border-radius: 20px;
+            backdrop-filter: blur(14px);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        [data-bs-theme="light"] .login-card {
+            background: #fff;
+            border: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .form-control {
+            border-radius: 10px;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            color: inherit;
+        }
+
+        [data-bs-theme="light"] .form-control {
+            background: #f1f5f9;
+            border: 1px solid #ced4da;
+        }
+
+        .btn-theme {
+            background: linear-gradient(90deg, #ff7e5f, #ff3c00);
+            border: none;
+            border-radius: 30px;
+            padding: 10px;
+            font-weight: 600;
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 24px;
+            background: linear-gradient(90deg, #ff7e5f, #ff3c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Theme toggle */
+        /* Dark mode */
+        .theme-toggle {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        /* Light mode fix */
+        [data-bs-theme="light"] .theme-toggle {
+            background: #ffffff;
+            color: #000;
+            border: 1px solid #ccc;
+        }
+        .otp-input {
+            text-align: center;
+            letter-spacing: 6px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .status-msg {
+            font-size: 14px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" onclick="toggleTheme()">
+        <i class="bi" id="themeIcon"></i>
+    </button>
+
+    <div class="login-wrapper">
+        <div class="login-card text-center">
+
+            <div class="logo-text mb-2">INSPENOX ADMIN</div>
+
+            <h4 class="fw-bold">Admin Login</h4>
+            <p class="text-muted small mb-3">Secure OTP-based access</p>
+
+            <!-- Email -->
+            <input type="email" id="email" class="form-control mt-3" placeholder="Enter admin email">
+
+            <!-- Send OTP -->
+            <button class="btn btn-theme w-100 mt-3" onclick="sendOTP()" id="sendBtn">
+                Send OTP
+            </button>
+
+            <!-- OTP -->
+            <input type="text" id="otp" class="form-control mt-3 otp-input" placeholder="Enter OTP">
+
+            <!-- Verify -->
+            <button class="btn btn-success w-100 mt-3" onclick="verifyOTP()" id="verifyBtn">
+                Verify & Login
+            </button>
+
+            <!-- Status -->
+            <div id="status" class="status-msg"></div>
+
+        </div>
+    </div>
+
+    <script>
+        function toggleTheme() {
+            const html = document.documentElement;
+            const current = html.getAttribute("data-bs-theme");
+            const newTheme = current === "dark" ? "light" : "dark";
+            html.setAttribute("data-bs-theme", newTheme);
+            localStorage.setItem("theme", newTheme);
+            updateIcon();
+        }
+
+        function updateIcon() {
+            const theme = document.documentElement.getAttribute("data-bs-theme");
+            document.getElementById("themeIcon").className =
+                theme === "dark" ? "bi bi-sun-fill" : "bi bi-moon-fill";
+        }
+
+        (function () {
+            const saved = localStorage.getItem("theme") || "dark";
+            document.documentElement.setAttribute("data-bs-theme", saved);
+            updateIcon();
+        })();
+
+        // 🔥 SEND OTP WITH ADMIN CHECK
+        function sendOTP() {
+            const email = document.getElementById("email").value;
+            const btn = document.getElementById("sendBtn");
+            const status = document.getElementById("status");
+
+            btn.innerHTML = "Checking...";
+            btn.disabled = true;
+            status.innerHTML = "";
+
+            // STEP 1: CHECK ADMIN
+            fetch("/.netlify/functions/admin-login", {
+                method: "POST",
+                body: JSON.stringify({ email })
+            })
+                .then(res => res.json())
+                .then(data => {
+
+                    if (!data.success) {
+                        status.innerHTML = "Access denied ❌ (Not Admin)";
+                        status.style.color = "red";
+
+                        btn.innerHTML = "Send OTP";
+                        btn.disabled = false;
+                        return;
+                    }
+
+                    // STEP 2: SEND OTP
+                    fetch("/.netlify/functions/send-otp", {
+                        method: "POST",
+                        body: JSON.stringify({ email })
+                    })
+                        .then(() => {
+                            status.innerHTML = "OTP sent successfully ✅";
+                            status.style.color = "lightgreen";
+
+                            btn.innerHTML = "OTP Sent";
+                            setTimeout(() => {
+                                btn.innerHTML = "Send OTP";
+                                btn.disabled = false;
+                            }, 2000);
+                        });
+
+                })
+                .catch(() => {
+                    status.innerHTML = "Server error ⚠️";
+                    status.style.color = "orange";
+                    btn.innerHTML = "Send OTP";
+                    btn.disabled = false;
+                });
+        }
+
+        // 🔥 VERIFY OTP
+        function verifyOTP() {
+            const email = document.getElementById("email").value;
+            const otp = document.getElementById("otp").value;
+            const btn = document.getElementById("verifyBtn");
+            const status = document.getElementById("status");
+
+            btn.innerHTML = "Verifying...";
+            btn.disabled = true;
+
+            fetch("/.netlify/functions/verify-otp", {
+                method: "POST",
+                body: JSON.stringify({ email, otp })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    if (data.success) {
+                        status.innerHTML = "Login successful ✅";
+                        status.style.color = "lightgreen";
+
+                        sessionStorage.setItem("admin", email);
+
+                        setTimeout(() => {
+                            window.location = "admin-dashboard.html";
+                        }, 1000);
+
+                    } else {
+                        status.innerHTML = "Invalid OTP ❌";
+                        status.style.color = "red";
+
+                        btn.innerHTML = "Verify & Login";
+                        btn.disabled = false;
+                    }
+                })
+                .catch(() => {
+                    status.innerHTML = "Server error ⚠️";
+                    status.style.color = "orange";
+                    btn.innerHTML = "Verify & Login";
+                    btn.disabled = false;
+                });
+        }
+    </script>
+  <script src="../assets/js/script.js"></script>
+
+
+</body>
+
+</html>

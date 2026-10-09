@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@supabase/supabase-js": "^2.100.1",
+    "jspdf": "^4.2.1",
+    "nodemailer": "^8.0.4",
+    "razorpay": "^2.9.6"
+  },
+  "name": "inspenox",
+  "version": "1.0.0",
+  "description": "This is the official website for Inspenox, India's first Industry 4.0 platform, offering intelligent solutions for enterprises. The website showcases Inspenox's suite of products, partners, team, testimonials, and provides contact options for demos and support.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:cf": "wrangler pages dev .",
+    "deploy:cf": "wrangler pages deploy ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
