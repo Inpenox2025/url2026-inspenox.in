@@ -6,6 +6,7 @@ This is the official website for Inspenox, India's first Industry 4.0 platform, 
 ## Features
 
 - **Products:**  
+  - Business Suite: All-in-one ERP & POS platform designed for enterprise operations, inventory, and automated workflows.
   - LMS Portals: Host courses, quizzes & certifications.
   - OEM Automation: Custom software for smart machines and AI-driven factory control.
 

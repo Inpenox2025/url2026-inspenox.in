@@ -1,0 +1,22 @@
+# Inspenox - Industry 4.0 Tech Solutions & LMS Platform
+
+> Inspenox is an enterprise Industry 4.0 technology platform in India, delivering intelligent solutions, OEM automation, smart machine AI control, and Injara LMS for institutions and corporate training.
+
+## Overview & Core Products
+
+- [INJARA LMS](https://inspenox.in/injara-lms): Comprehensive learning management platform for hosting courses, interactive quizzes, certifications, and student tracking.
+- [Business Suite](https://inspenox.in/products/business-suite): All-in-one ERP & POS platform designed for enterprise operations, inventory, and automated workflows.
+- [LMS Solutions](https://inspenox.in/products/lms): Scalable cloud training infrastructure for educational institutions and businesses.
+- [OEM Automation](https://inspenox.in/products/oem): Custom software for smart machines, industrial IoT integrations, and AI-driven factory floor control.
+
+## Key Links & Resources
+
+- [Official Website](https://inspenox.in/): Product portal, solution demos, and contact options.
+- [Sitemap](https://inspenox.in/sitemap.xml): Structure of public pages on inspenox.in.
+- [Security Policy](https://inspenox.in/.well-known/security.txt): Security contact and vulnerability disclosure info.
+
+## Contact Information
+
+- Support Email: info@inspenox.in
+- Security Vulnerability Reports: security@inspenox.in
+- WhatsApp Support: +91 9491330702

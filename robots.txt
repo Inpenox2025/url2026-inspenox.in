@@ -1,0 +1,21 @@
+# robots.txt for https://inspenox.in/
+User-agent: *
+Allow: /
+
+# Disallow private and administrative pages
+Disallow: /admin-dashboard
+Disallow: /admin-dashboard.html
+Disallow: /admin-login
+Disallow: /admin-login.html
+Disallow: /influencer-dashboard
+Disallow: /influencer-dashboard.html
+Disallow: /influencer-login
+Disallow: /influencer-login.html
+Disallow: /success
+Disallow: /success.html
+Disallow: /orders.log
+Disallow: /netlify/
+Disallow: /functions/
+
+# Sitemap location
+Sitemap: https://inspenox.in/sitemap.xml
