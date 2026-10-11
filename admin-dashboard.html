@@ -302,7 +302,7 @@
 
             btn.onclick = function () {
 
-                fetch("/.netlify/functions/update-coupon", {
+                fetch("/api/update-coupon", {
                     method: "POST",
                     body: JSON.stringify({
                         id,
@@ -336,7 +336,7 @@
 
             btn.onclick = function () {
 
-                fetch("/.netlify/functions/update-coupon", {
+                fetch("/api/update-coupon", {
                     method: "POST",
                     body: JSON.stringify({
                         id,
@@ -355,9 +355,21 @@
 
             new bootstrap.Modal(document.getElementById("couponModal")).show();
         }
+
+        function deleteCoupon(id) {
+            if (!confirm("Are you sure you want to delete this coupon?")) return;
+            fetch("/api/delete-coupon", {
+                method: "POST",
+                body: JSON.stringify({ id })
+            }).then(() => {
+                alert("Coupon deleted ✅");
+                location.reload();
+            });
+        }
+
         Promise.all([
-            fetch("/.netlify/functions/get-orders").then(r => r.json()),
-            fetch("/.netlify/functions/get-influencers").then(r => r.json())
+            fetch("/api/get-orders").then(r => r.json()),
+            fetch("/api/get-influencers").then(r => r.json())
         ]).then(([orders, users]) => {
 
             // ✅ TOTAL COMMISSION (from orders)
@@ -382,7 +394,7 @@
             document.getElementById("ordersCount").innerText = orders.length;
         });
 
-        fetch("/.netlify/functions/get-influencers")
+        fetch("/api/get-influencers")
             .then(r => r.json())
             .then(data => {
                 let html = "<option value=''>Select Influencer</option>";
@@ -395,7 +407,7 @@
             });
 
         // ORDERS
-        fetch("/.netlify/functions/get-orders")
+        fetch("/api/get-orders")
             .then(r => r.json())
             .then(data => {
 
@@ -421,7 +433,7 @@
             });
 
         // INFLUENCERS
-        fetch("/.netlify/functions/get-influencers")
+        fetch("/api/get-influencers")
             .then(r => r.json())
             .then(data => {
                 let html = "";
@@ -447,7 +459,7 @@
             if (!amount || amount <= 0) return alert("No pending");
             if (!confirm("Pay ₹" + amount + " ?")) return;
 
-            fetch("/.netlify/functions/pay-influencer", {
+            fetch("/api/pay-influencer", {
                 method: "POST",
                 body: JSON.stringify({ userId: id, amount })
             }).then(() => location.reload());
@@ -456,14 +468,14 @@
         function editUser(id) {
             let name = prompt("Name:");
             let upi = prompt("UPI:");
-            fetch("/.netlify/functions/update-influencer", {
+            fetch("/api/update-influencer", {
                 method: "POST",
                 body: JSON.stringify({ id, name, upi_id: upi })
             }).then(() => location.reload());
         }
 
         // COUPONS
-        fetch("/.netlify/functions/get-coupons")
+        fetch("/api/get-coupons")
             .then(r => r.json())
             .then(data => {
                 let html = "";
@@ -524,7 +536,7 @@
                 return;
             }
 
-            fetch("/.netlify/functions/create-coupon", {
+            fetch("/api/create-coupon", {
                 method: "POST",
                 body: JSON.stringify(payload)
             })
