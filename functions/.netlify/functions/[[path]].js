@@ -1,52 +1,36 @@
-const adminLogin = require('../../../netlify/functions/admin-login');
-const applyCoupon = require('../../../netlify/functions/apply-coupon');
-const createCoupon = require('../../../netlify/functions/create-coupon');
-const createOrder = require('../../../netlify/functions/create-order');
-const deleteCoupon = require('../../../netlify/functions/delete-coupon');
-const getCoupons = require('../../../netlify/functions/get-coupons');
-const getDashboard = require('../../../netlify/functions/get-dashboard');
-const getInfluencerDetails = require('../../../netlify/functions/get-influencer-details');
-const getInfluencers = require('../../../netlify/functions/get-influencers');
-const getOrders = require('../../../netlify/functions/get-orders');
-const payInfluencer = require('../../../netlify/functions/pay-influencer');
-const registerUser = require('../../../netlify/functions/register-user');
-const sendOtp = require('../../../netlify/functions/send-otp');
-const sendMail = require('../../../netlify/functions/sendMail');
-const updateCoupon = require('../../../netlify/functions/update-coupon');
-const updateInfluencer = require('../../../netlify/functions/update-influencer');
-const verifyOtp = require('../../../netlify/functions/verify-otp');
-const verifyPayment = require('../../../netlify/functions/verify-payment');
-
-const routes = {
-    'admin-login': adminLogin,
-    'apply-coupon': applyCoupon,
-    'create-coupon': createCoupon,
-    'create-order': createOrder,
-    'delete-coupon': deleteCoupon,
-    'get-coupons': getCoupons,
-    'get-dashboard': getDashboard,
-    'get-influencer-details': getInfluencerDetails,
-    'get-influencers': getInfluencers,
-    'get-orders': getOrders,
-    'pay-influencer': payInfluencer,
-    'register-user': registerUser,
-    'send-otp': sendOtp,
-    'sendMail': sendMail,
-    'update-coupon': updateCoupon,
-    'update-influencer': updateInfluencer,
-    'verify-otp': verifyOtp,
-    'verify-payment': verifyPayment
+const routeLoaders = {
+    'admin-login': () => require('../../../netlify/functions/admin-login'),
+    'apply-coupon': () => require('../../../netlify/functions/apply-coupon'),
+    'create-coupon': () => require('../../../netlify/functions/create-coupon'),
+    'create-order': () => require('../../../netlify/functions/create-order'),
+    'delete-coupon': () => require('../../../netlify/functions/delete-coupon'),
+    'get-coupons': () => require('../../../netlify/functions/get-coupons'),
+    'get-dashboard': () => require('../../../netlify/functions/get-dashboard'),
+    'get-influencer-details': () => require('../../../netlify/functions/get-influencer-details'),
+    'get-influencers': () => require('../../../netlify/functions/get-influencers'),
+    'get-orders': () => require('../../../netlify/functions/get-orders'),
+    'pay-influencer': () => require('../../../netlify/functions/pay-influencer'),
+    'register-user': () => require('../../../netlify/functions/register-user'),
+    'send-otp': () => require('../../../netlify/functions/send-otp'),
+    'sendMail': () => require('../../../netlify/functions/sendMail'),
+    'update-coupon': () => require('../../../netlify/functions/update-coupon'),
+    'update-influencer': () => require('../../../netlify/functions/update-influencer'),
+    'verify-otp': () => require('../../../netlify/functions/verify-otp'),
+    'verify-payment': () => require('../../../netlify/functions/verify-payment')
 };
 
 async function handleNetlifyRequest(context) {
     const { request, env, params } = context;
     const url = new URL(request.url);
 
-    // Hydrate process.env with Cloudflare environment variables
+    // Hydrate process.env with Cloudflare environment variables BEFORE any handlers are loaded
+    if (typeof process === 'undefined') {
+        globalThis.process = { env: {} };
+    } else if (!process.env) {
+        process.env = {};
+    }
     if (env && typeof env === 'object') {
-        if (typeof process !== 'undefined' && process.env) {
-            Object.assign(process.env, env);
-        }
+        Object.assign(process.env, env);
     }
 
     // Handle OPTIONS CORS preflight
@@ -69,10 +53,24 @@ async function handleNetlifyRequest(context) {
         routeName = cleanPath.split('/')[0];
     }
 
-    const handlerModule = routes[routeName];
-    if (!handlerModule) {
+    const loader = routeLoaders[routeName];
+    if (!loader) {
         return new Response(JSON.stringify({ error: `Netlify Function /.netlify/functions/${routeName || ''} not found` }), {
             status: 404,
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            }
+        });
+    }
+
+    let handlerModule;
+    try {
+        handlerModule = loader();
+    } catch (loadErr) {
+        console.error(`Error loading module for ${routeName}:`, loadErr);
+        return new Response(JSON.stringify({ error: loadErr.message || 'Error loading handler' }), {
+            status: 500,
             headers: {
                 'Content-Type': 'application/json',
                 'Access-Control-Allow-Origin': '*'

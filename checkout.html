@@ -464,7 +464,7 @@
 
             showLoader("Applying coupon...");
 
-            fetch("/.netlify/functions/apply-coupon", {
+            fetch("/api/apply-coupon", {
                 method: "POST",
                 body: JSON.stringify({ coupon: input })
             })
@@ -530,7 +530,7 @@
 
             showLoader("Creating secure payment...");
 
-            fetch("/.netlify/functions/create-order", {
+            fetch("/api/create-order", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -566,7 +566,7 @@
 
                             showLoader("Verifying payment...");
 
-                            fetch("/.netlify/functions/verify-payment", {
+                            fetch("/api/verify-payment", {
                                 method: "POST",
                                 headers: {
                                     "Content-Type": "application/json"

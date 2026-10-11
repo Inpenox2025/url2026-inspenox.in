@@ -277,7 +277,7 @@
         }
 
         // 📊 FETCH DASHBOARD
-        fetch("/.netlify/functions/get-dashboard", {
+        fetch("/api/get-dashboard", {
             method: "POST",
             body: JSON.stringify({ email })
         })

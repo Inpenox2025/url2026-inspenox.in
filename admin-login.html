@@ -185,7 +185,7 @@
             status.innerHTML = "";
 
             // STEP 1: CHECK ADMIN
-            fetch("/.netlify/functions/admin-login", {
+            fetch("/api/admin-login", {
                 method: "POST",
                 body: JSON.stringify({ email })
             })
@@ -202,7 +202,7 @@
                     }
 
                     // STEP 2: SEND OTP
-                    fetch("/.netlify/functions/send-otp", {
+                    fetch("/api/send-otp", {
                         method: "POST",
                         body: JSON.stringify({ email })
                     })
@@ -236,7 +236,7 @@
             btn.innerHTML = "Verifying...";
             btn.disabled = true;
 
-            fetch("/.netlify/functions/verify-otp", {
+            fetch("/api/verify-otp", {
                 method: "POST",
                 body: JSON.stringify({ email, otp })
             })

@@ -211,7 +211,7 @@
             btn.innerHTML = "Sending...";
             btn.disabled = true;
 
-            fetch("/.netlify/functions/send-otp", {
+            fetch("/api/send-otp", {
                 method: "POST",
                 body: JSON.stringify({ email })
             }).then(() => {
@@ -232,7 +232,7 @@
             btn.innerHTML = "Verifying...";
             btn.disabled = true;
 
-            fetch("/.netlify/functions/verify-otp", {
+            fetch("/api/verify-otp", {
                 method: "POST",
                 body: JSON.stringify({ email, otp })
             })

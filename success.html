@@ -354,7 +354,7 @@
         }
 
 
-        fetch("/.netlify/functions/sendMail", {
+        fetch("/api/sendMail", {
             method: "POST",
             body: JSON.stringify({
                 name: name,
@@ -387,7 +387,7 @@
             };
 
             try {
-                const res = await fetch("/.netlify/functions/register-user", {
+                const res = await fetch("/api/register-user", {
                     method: "POST",
                     body: JSON.stringify(data)
                 });
