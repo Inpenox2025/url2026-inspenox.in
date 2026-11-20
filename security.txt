@@ -1,7 +1,7 @@
 # Security Contact Information for Inspenox
 # RFC 9116 - https://securitytxt.org/
 
-Contact: mailto:security@inspenox.in
+Contact: mailto:info@inspenox.in
 Contact: mailto:info@inspenox.in
 Contact: https://inspenox.in/#contact
 Expires: 2027-12-31T23:59:59.000Z
